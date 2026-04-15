@@ -18,8 +18,8 @@ export default function KnowledgeBase() {
   const modules = [
     {
       id: 1,
-      title: 'Power Automate 基礎概念',
-      description: '瞭解 Power Automate 是什麼、為什麼需要它，以及它如何融入 Microsoft 365 生態。',
+      title: 'SharePoint 基礎概念',
+      description: '了解 SharePoint 是什麼、為什麼需要它，以及它如何融入 Microsoft 365 生态。',
       difficulty: 'beginner',
       duration: '15 分鐘',
       lessons: 5,
@@ -27,8 +27,8 @@ export default function KnowledgeBase() {
     },
     {
       id: 2,
-      title: '建立您的第一個流程',
-      description: '一步步指導您建立第一個自動化流程，從觸發器到動作的完整流程。',
+      title: '建立您的第一個 SharePoint 網站',
+      description: '一步步指導您建立第一個 SharePoint 網站，從網站設置到內容管理的完整流程。',
       difficulty: 'beginner',
       duration: '30 分鐘',
       lessons: 8,
@@ -36,8 +36,8 @@ export default function KnowledgeBase() {
     },
     {
       id: 3,
-      title: '雲端流程進階技巧',
-      description: '掌握條件、迴圈、變數等進階功能，建立更複雜的自動化流程。',
+      title: 'SharePoint 列表與庫進階技巧',
+      description: '掌握列表、永管、權限控制等進階功能，建立更複雜的協作系統。',
       difficulty: 'intermediate',
       duration: '45 分鐘',
       lessons: 12,
@@ -46,7 +46,7 @@ export default function KnowledgeBase() {
     {
       id: 4,
       title: '與 Microsoft 365 整合',
-      description: '學習如何將 Power Automate 與 Teams、Outlook、SharePoint 等工具整合。',
+      description: '學習如何將 SharePoint 與 Teams、Outlook、Power Automate 等工具整合。',
       difficulty: 'intermediate',
       duration: '50 分鐘',
       lessons: 10,
@@ -54,8 +54,8 @@ export default function KnowledgeBase() {
     },
     {
       id: 5,
-      title: 'AI Builder 與自動化',
-      description: '探索 AI Builder 如何增強您的自動化流程，實現智能自動化。',
+      title: 'SharePoint 搜索與內容管理',
+      description: '探索搜索功能如何增強您的內容發現，實現高效的資訊管理。',
       difficulty: 'advanced',
       duration: '60 分鐘',
       lessons: 8,
@@ -63,12 +63,12 @@ export default function KnowledgeBase() {
     },
     {
       id: 6,
-      title: '流程最佳實踐與故障排除',
-      description: '學習業界最佳實踐、常見錯誤及其解決方案，確保流程穩定運行。',
+      title: 'SharePoint 最佳實踊與故障排查',
+      description: '學習業界最佳實踊、常見錯誤及其解決方案，確保網站穩定運行。',
       difficulty: 'advanced',
       duration: '40 分鐘',
       lessons: 7,
-      topics: ['最佳實踐', '性能優化', '故障排除'],
+      topics: ['最佳實踊', '性能優化', '故障排除'],
     },
   ];
 
@@ -95,7 +95,7 @@ export default function KnowledgeBase() {
             <h1 className="text-4xl font-bold text-foreground">知識庫</h1>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            系統化的學習路徑，從基礎入門到進階應用。按照您的進度選擇合適的課程。
+            系統化的 SharePoint 學習路徑，從基礎入門到進階應用。按照您的進度選擇合適的課程。
           </p>
         </div>
       </section>
@@ -183,23 +183,23 @@ export default function KnowledgeBase() {
               建議學習路徑
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: '初級路徑',
-                  description: '適合完全新手',
-                  modules: ['基礎概念', '第一個流程'],
+          {[
+            {
+              title: '初級路徑',
+              description: '適合完全新手',
+              modules: ['基礎概念', '第一個網站'],
                   duration: '45 分鐘',
                 },
-                {
-                  title: '中級路徑',
-                  description: '適合有基礎的使用者',
-                  modules: ['進階技巧', 'M365 整合'],
+            {
+              title: '中級路徑',
+              description: '適合有基礎的使用者',
+              modules: ['列表與庫進階', 'M365 整合'],
                   duration: '95 分鐘',
                 },
-                {
-                  title: '進階路徑',
-                  description: '適合想深入學習的使用者',
-                  modules: ['AI Builder', '最佳實踐'],
+            {
+              title: '進階路徑',
+              description: '適合想深入學習的使用者',
+              modules: ['搜索與內容管理', '最佳實踊'],
                   duration: '100 分鐘',
                 },
               ].map((path, idx) => (
@@ -238,15 +238,13 @@ export default function KnowledgeBase() {
             需要額外幫助？
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            瀏覽我們的常見問題或聯絡技術支援團隊。
+            羏覽我們的常見問題或联絡 SharePoint 技術支援團隊。
           </p>
           <Link href="/support">
-            <a>
-              <Button>
-                前往技術支援
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
+            <Button>
+              前往技術支援
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
           </Link>
         </div>
       </section>

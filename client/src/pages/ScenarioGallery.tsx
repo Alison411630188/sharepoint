@@ -256,12 +256,10 @@ export default function ScenarioGallery() {
             查看我們的知識庫，學習如何建立適合您業務需求的自動化流程。
           </p>
           <Link href="/knowledge-base">
-            <a>
-              <Button>
-                開始學習
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
+            <Button>
+              開始學習
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
           </Link>
         </div>
       </section>

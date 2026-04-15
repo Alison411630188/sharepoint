@@ -287,12 +287,10 @@ export default function DocumentCenter() {
             聯絡我們的技術支援團隊，我們會幫助您找到所需的資源。
           </p>
           <Link href="/support">
-            <a>
-              <Button className="bg-white text-primary hover:bg-white/90">
-                聯絡支援
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
+            <Button className="bg-white text-primary hover:bg-white/90">
+              联絡支援
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
           </Link>
         </div>
       </section>

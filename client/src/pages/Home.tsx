@@ -72,26 +72,22 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 container max-w-3xl px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Power Automate 實戰學院
+            SharePoint 實戰學院
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-            企業內部協作平台。掌握自動化技巧，提升工作效率，讓重複性工作自動化。
+            企業內部協作平台。掌握 SharePoint 技巧，提升團隊協作效率，打造高效的文件管理系統。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/knowledge-base">
-              <a>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto">
-                  開始學習
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </a>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto">
+                開始學習
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </Link>
             <Link href="/scenario-gallery">
-              <a>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/90 hover:bg-white">
-                  查看案例
-                </Button>
-              </a>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/90 hover:bg-white">
+                查看案例
+              </Button>
             </Link>
           </div>
         </div>
@@ -106,7 +102,7 @@ export default function Home() {
               探索學習資源
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              我們提供全面的 Power Automate 學習資源，從基礎入門到進階應用，幫助您成為自動化專家。
+              我們提供全面的 SharePoint 學習資源，從基礎入門到進階應用，幫助您成為協作平台專家。
             </p>
           </div>
 
@@ -145,39 +141,39 @@ export default function Home() {
       <section className="py-20 bg-secondary/30">
         <div className="container">
           <h2 className="text-3xl font-bold text-foreground text-center mb-12">
-            為什麼選擇 Power Automate？
+            為什麼選擇 SharePoint？
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 icon: '⚡',
                 title: '提升效率',
-                desc: '自動化重複性工作，讓您的團隊專注於更有價值的任務。',
+                desc: '集中管理文件，減少重複工作，讓您的團隊專注於核心業務。',
               },
               {
                 icon: '🔗',
                 title: '無縫整合',
-                desc: '完美整合 Teams、Outlook、SharePoint 等 Microsoft 365 應用。',
+                desc: '完美整合 Teams、Outlook、OneDrive 等 Microsoft 365 應用。',
               },
               {
                 icon: '🎯',
-                title: '易於上手',
-                desc: '無需程式背景，拖拉模組即可建立強大的自動化流程。',
+                title: '易於使用',
+                desc: '直觀的介面設計，無需技術背景即可快速上手。',
               },
               {
                 icon: '💰',
                 title: '成本效益',
-                desc: '多數企業可免費使用基本功能，無需額外投資。',
+                desc: '內建於 Microsoft 365，無需額外投資即可開始使用。',
               },
               {
                 icon: '🛡️',
                 title: '安全可靠',
-                desc: '企業級安全性與合規性，保護您的敏感資料。',
+                desc: '企業級安全性與版本控制，保護您的重要文件。',
               },
               {
                 icon: '📈',
                 title: '可擴展性',
-                desc: '從簡單流程到複雜自動化，滿足各種業務需求。',
+                desc: '從小型團隊到大型企業，滿足各種協作需求。',
               },
             ].map((benefit, idx) => (
               <Card key={idx} className="border-border bg-card hover:shadow-md transition-shadow">
@@ -197,10 +193,10 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '500+', label: '學習資源' },
-              { number: '50+', label: '實戰案例' },
-              { number: '1000+', label: '用戶' },
-              { number: '99%', label: '滿意度' },
+              { number: '200+', label: '學習資源' },
+              { number: '40+', label: '實戰案例' },
+              { number: '5000+', label: '用戶' },
+              { number: '98%', label: '滿意度' },
             ].map((stat, idx) => (
               <div key={idx}>
                 <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
@@ -214,19 +210,17 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
         <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold mb-4">
             準備好開始了嗎？
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            加入我們的學習社群，探索 Power Automate 的無限可能。
+            加入我們的學習社群，探索 SharePoint 的無限可能。
           </p>
           <Link href="/knowledge-base">
-            <a>
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                立即開始
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+              立即開始
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
           </Link>
         </div>
       </section>

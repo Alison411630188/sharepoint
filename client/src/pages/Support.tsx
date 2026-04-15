@@ -240,18 +240,16 @@ export default function Support() {
               const Icon = resource.icon;
               return (
                 <Link key={idx} href={resource.link}>
-                  <a>
-                    <Card className="border-border hover:shadow-lg transition-shadow cursor-pointer h-full">
-                      <CardContent className="pt-6">
-                        <Icon className="w-8 h-8 text-primary mb-4" />
-                        <h3 className="font-bold text-foreground mb-2">{resource.title}</h3>
-                        <p className="text-sm text-muted-foreground mb-4">{resource.description}</p>
-                        <div className="text-primary text-sm font-medium flex items-center">
-                          前往 <ArrowRight className="ml-2 w-4 h-4" />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </a>
+                  <Card className="border-border hover:shadow-lg transition-shadow cursor-pointer h-full">
+                    <CardContent className="pt-6">
+                      <Icon className="w-8 h-8 text-primary mb-4" />
+                      <h3 className="font-bold text-foreground mb-2">{resource.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-4">{resource.description}</p>
+                      <div className="text-primary text-sm font-medium flex items-center">
+                        前往 <ArrowRight className="ml-2 w-4 h-4" />
+                      </div>
+                    </CardContent>
+                  </Card>
                 </Link>
               );
             })}
