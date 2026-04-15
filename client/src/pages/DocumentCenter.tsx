@@ -18,8 +18,8 @@ export default function DocumentCenter() {
   const documents = [
     {
       id: 1,
-      title: 'Power Automate 快速入門指南',
-      description: '全面的入門指南，涵蓋基本概念、界面導覽和第一個流程的建立。',
+      title: 'SharePoint 快速入門指南',
+      description: '全面的入門指南，涵蓋基本概念、畋面導覽和第一個網站的建立。',
       category: '入門指南',
       format: 'PDF',
       size: '2.4 MB',
@@ -27,17 +27,17 @@ export default function DocumentCenter() {
     },
     {
       id: 2,
-      title: '雲端流程最佳實踐',
-      description: '業界公認的最佳實踐，幫助您設計高效、可維護的自動化流程。',
-      category: '最佳實踐',
+      title: 'SharePoint 網站最佳實踊',
+      description: '業界公認的最佳實踊，幫助您設計高效、可維護的 SharePoint 網站。',
+      category: '最佳實踊',
       format: 'PDF',
       size: '3.1 MB',
       downloads: 890,
     },
     {
       id: 3,
-      title: 'Power Automate 流程範本集',
-      description: '預先設計的流程範本，可直接使用或作為您自己流程的基礎。',
+      title: 'SharePoint 網站範本集',
+      description: '預先設計的網站範本，可直接使用或作為您自己網站的基礎。',
       category: '範本',
       format: 'ZIP',
       size: '5.2 MB',
@@ -45,7 +45,7 @@ export default function DocumentCenter() {
     },
     {
       id: 4,
-      title: '常見錯誤與故障排除指南',
+      title: 'SharePoint 故障排除指南',
       description: '詳細列出常見錯誤、其原因以及解決方案。',
       category: '故障排除',
       format: 'PDF',
@@ -128,7 +128,7 @@ export default function DocumentCenter() {
             <h1 className="text-4xl font-bold text-foreground">文件中心</h1>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            下載教材、範本和最佳實踐文件，加速您的 Power Automate 學習進程。
+            下載教材、範本和最佳實踊文件，加速您的 SharePoint 學習進程。
           </p>
         </div>
       </section>
@@ -206,8 +206,8 @@ export default function DocumentCenter() {
             {[
               {
                 icon: Zap,
-                title: '快速開始',
-                description: '5 分鐘快速入門 Power Automate，立即開始您的自動化之旅。',
+              title: '快速開始',
+              description: '5 分鐘快速入門 SharePoint，立即開始您的協作之旅。',
                 link: '#',
               },
               {
@@ -218,8 +218,8 @@ export default function DocumentCenter() {
               },
               {
                 icon: Download,
-                title: '範本庫',
-                description: '下載預先設計的流程範本，節省開發時間。',
+              title: '範本庫',
+              description: '下載預先設計的網站範本，節省開發時間。',
                 link: '#',
               },
             ].map((resource, idx) => {

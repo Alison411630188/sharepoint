@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-foreground mb-4">關於</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Power Automate 實戰學院是企業內部協作與知識共享的專業平台。
+              SharePoint 實戰學院是企業內部協作與知識共享的專業平台。
             </p>
           </div>
 
@@ -25,24 +25,16 @@ export default function Footer() {
             <h3 className="font-bold text-foreground mb-4">快速連結</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/">
-                  <a className="text-muted-foreground hover:text-primary transition-colors">首頁</a>
-                </Link>
+                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">首頁</Link>
               </li>
               <li>
-                <Link href="/knowledge-base">
-                  <a className="text-muted-foreground hover:text-primary transition-colors">知識庫</a>
-                </Link>
+                <Link href="/knowledge-base" className="text-muted-foreground hover:text-primary transition-colors">知識庫</Link>
               </li>
               <li>
-                <Link href="/scenario-gallery">
-                  <a className="text-muted-foreground hover:text-primary transition-colors">案例庫</a>
-                </Link>
+                <Link href="/scenario-gallery" className="text-muted-foreground hover:text-primary transition-colors">案例庫</Link>
               </li>
               <li>
-                <Link href="/document-center">
-                  <a className="text-muted-foreground hover:text-primary transition-colors">文件中心</a>
-                </Link>
+                <Link href="/document-center" className="text-muted-foreground hover:text-primary transition-colors">文件中心</Link>
               </li>
             </ul>
           </div>
@@ -83,7 +75,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-            <p>&copy; 2026 Power Automate 實戰學院. 保留所有權利。</p>
+            <p>&copy; 2026 SharePoint 實戰學院. 保留所有權利。</p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-primary transition-colors">隱私政策</a>
               <a href="#" className="hover:text-primary transition-colors">使用條款</a>

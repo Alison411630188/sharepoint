@@ -22,32 +22,32 @@ export default function Support() {
       category: '基本問題',
       questions: [
         {
-          q: 'Power Automate 需要程式背景嗎？',
-          a: '完全不需要！Power Automate 使用拖拉介面，任何人都可以建立自動化流程。我們的知識庫提供詳細的逐步指南。',
+          q: 'SharePoint 需要程式背景嗎？',
+          a: '完全不需要！SharePoint 提供了直觀的介面，任何人都可以建立和管理網站。我們的知識庫提供詳細的逐步指南。',
         },
         {
-          q: '雲端流程和桌面流程有什麼區別？',
-          a: '雲端流程連接應用程式和服務（如 Outlook、Teams），桌面流程自動化桌面應用程式和舊版系統。',
+          q: 'SharePoint 網站和文件庫有什麼區別？',
+          a: 'SharePoint 網站是整個協作空間，文件庫是網站中的文件存存位置。您可以在一個網站中有多個文件庫。',
         },
         {
-          q: 'Power Automate 的成本是多少？',
-          a: '多數企業可免費使用基本功能。進階功能需要付費授權。詳情請聯絡您的 IT 部門。',
+          q: 'SharePoint 的成本是多少？',
+          a: '多數企業可免費使用基本功能。進階功能需要付費授權。詳情請联絡您的 IT 部門。',
         },
       ],
     },
     {
-      category: '流程建立',
+      category: '網站建立',
       questions: [
         {
-          q: '如何開始建立我的第一個流程？',
-          a: '訪問 flow.microsoft.com，登入您的 Microsoft 帳戶，選擇流程類型並開始建立。我們的知識庫有詳細教程。',
+          q: '如何開始建立我的第一個網站？',
+          a: '訪問您的 SharePoint 管理中心，登入您的 Microsoft 帳戶，選擇網站類型並開始建立。我們的知識庫有詳細教程。',
         },
         {
-          q: '如何在流程中使用變數？',
-          a: '變數用於儲存和操作數據。在流程中新增「初始化變數」動作，設定名稱、類型和初始值。',
+          q: '如何在網站中管理權限？',
+          a: '權限用於控制護該有訪問、编輯和削除權限。在網站訪問權限設置中配置。',
         },
         {
-          q: '如何測試我的流程？',
+          q: '如何測試我的網站？',
           a: '使用「測試」按鈕進行手動測試。提供必要的輸入值，檢查流程是否按預期運行。',
         },
       ],
@@ -218,24 +218,24 @@ export default function Support() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {
-                icon: Clock,
-                title: '知識庫',
-                description: '瀏覽完整的教程和指南',
-                link: '/knowledge-base',
-              },
-              {
-                icon: Search,
-                title: '案例庫',
-                description: '查看實戰應用情境',
-                link: '/scenario-gallery',
-              },
-              {
-                icon: ArrowRight,
-                title: '文件中心',
-                description: '下載教材和範本',
-                link: '/document-center',
-              },
+    {
+      icon: Clock,
+      title: '知識庫',
+      description: '瀏覽完整的 SharePoint 教程和指南',
+      link: '/knowledge-base',
+    },
+    {
+      icon: Search,
+      title: '案例庫',
+      description: '查看實戰協作情境',
+      link: '/scenario-gallery',
+    },
+    {
+      icon: ArrowRight,
+      title: '文件中心',
+      description: '下載 SharePoint 教材和範本',
+      link: '/document-center',
+    },
             ].map((resource, idx) => {
               const Icon = resource.icon;
               return (

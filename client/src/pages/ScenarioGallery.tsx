@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Mail, Save, Clock, MessageSquare, FileText, Lightbulb } from 'lucide-react';
+import { ArrowRight, Mail, Save, Clock, MessageSquare, FileText, Lightbulb, Zap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -19,64 +19,65 @@ export default function ScenarioGallery() {
     {
       id: 1,
       icon: Save,
-      title: '自動儲存郵件附件到 OneDrive',
-      category: '郵件自動化',
-      description: '每次收到含附件的郵件都要手動下載另存新檔？這個流程會自動幫您把附件備份到指定的 OneDrive 資料夾。',
-      benefits: ['節省時間', '避免遺漏', '自動備份'],
+      title: '集中文件管理與統一存取',
+      category: '文件管理',
+      description: '使用 SharePoint 文件庫集中存存各部門的文件、設計稿和永管文件，實現統一管理。',
+      benefits: ['統一存取', '永管保護', '版本控制'],
       difficulty: 'beginner',
     },
     {
       id: 2,
       icon: Mail,
-      title: 'Outlook 郵件 Teams 通知',
-      category: '郵件自動化',
-      description: '每天信件如雪片般飛來，擔心漏看重要人物的信？當收到特定對象來信時，立刻發送 Teams 訊息提醒自己。',
-      benefits: ['即時提醒', '不漏重要信', '提升效率'],
+      title: 'Teams 频道與 SharePoint 網站整合',
+      category: 'Teams 整合',
+      description: '將 SharePoint 網站作為 Teams 频道的中心，讓永管、永管與流程直接在 Teams 中使用，實現無縫協作。',
+      benefits: ['無縫整合', '提升效率', '協作便利'],
       difficulty: 'beginner',
     },
     {
       id: 3,
       icon: Clock,
-      title: '早上定時發送天氣與提醒',
-      category: '排程自動化',
-      description: '讓系統成為您的專屬秘書，每天早上 8:30 準時發送今天的當地天氣預報到您的信箱。',
-      benefits: ['定時提醒', '個性化內容', '提升體驗'],
+      title: '永管與版本控制策略',
+      category: '文件保護',
+      description: '設置文件永管策略，確保重要文件不會被意外削除。追蹤每個版本的變更，需要時可以恢複。',
+      benefits: ['重要文件保護', '版本追蹤', '恢複功能'],
       difficulty: 'intermediate',
     },
     {
       id: 4,
       icon: MessageSquare,
-      title: '長郵件重點 AI 自動摘要',
-      category: 'AI 自動化',
-      description: '每天收到的技術週報或會議記錄太長沒時間細讀？讓 AI 自動幫您整理出繁體中文重點摘要並傳送到 Teams。',
-      benefits: ['節省時間', 'AI 智能', '重點提取'],
-      difficulty: 'advanced',
+      title: '水平權限控制與安全管理',
+      category: '安全管理',
+      description: '設置權限級別，控制不同使用者的訪問、编輯和削除權限。實現細粒化的安全管理。',
+      benefits: ['細粒化權限', '安全控制', '實施容易'],
+      difficulty: 'intermediate',
     },
     {
       id: 5,
       icon: FileText,
-      title: '文件上傳自動跑核准流程',
-      category: 'SharePoint 自動化',
-      description: '不用再寫 Email 詢問！只要將檔案上傳到指定資料夾，系統會自動通知主管審核。核准後，檔案會自動搬移到已核准區。',
-      benefits: ['自動流程', '提升效率', '追蹤審核'],
-      difficulty: 'intermediate',
+      title: '內容类別与搜索優化',
+      category: '內容管理',
+      description: '使用內容类別組織文件、標籤和上位組織，提高搜索效率。讓使用者快速找到所需文件。',
+      benefits: ['搜索效率', '內容組織', '學習曲線低'],
+      difficulty: 'advanced',
     },
     {
       id: 6,
       icon: Lightbulb,
-      title: '郵件 AI 自動摘要與翻譯',
-      category: 'AI 自動化',
-      description: '利用自訂 AI 提示詞，當收到外語或長郵件時，系統自動將內容翻譯並摘要為繁體中文條列重點。',
-      benefits: ['多語言支援', 'AI 翻譯', '智能摘要'],
-      difficulty: 'advanced',
+      title: '定時保管與清理策略',
+      category: '文件管理',
+      description: '設置自動保管策略，清理過旧文件。根據保管時間自動將文件移到保管區，節省存存空間。',
+      benefits: ['自動保管', '空間節省', '管理粗易'],
+      difficulty: 'intermediate',
     },
   ];
 
   const categories = [
-    { name: '郵件自動化', count: 2, color: 'bg-blue-100 text-blue-800' },
-    { name: '排程自動化', count: 1, color: 'bg-green-100 text-green-800' },
-    { name: 'AI 自動化', count: 2, color: 'bg-purple-100 text-purple-800' },
-    { name: 'SharePoint 自動化', count: 1, color: 'bg-amber-100 text-amber-800' },
+    { name: '文件管理', count: 2, color: 'bg-blue-100 text-blue-800' },
+    { name: 'Teams 整合', count: 1, color: 'bg-green-100 text-green-800' },
+    { name: '文件保護', count: 1, color: 'bg-purple-100 text-purple-800' },
+    { name: '安全管理', count: 1, color: 'bg-amber-100 text-amber-800' },
+    { name: '內容管理', count: 1, color: 'bg-pink-100 text-pink-800' },
   ];
 
   const getDifficultyColor = (difficulty: string) => {
@@ -106,12 +107,12 @@ export default function ScenarioGallery() {
         <div className="container">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <Lightbulb className="w-6 h-6 text-white" />
+              <Zap className="w-6 h-6 text-white" />
             </div>
             <h1 className="text-4xl font-bold text-foreground">案例庫</h1>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            精選的實戰應用情境，展示如何在日常工作中應用 Power Automate。每個案例都包含詳細的步驟指南。
+            真實的 SharePoint 協作案例，使用者分享他們的成功故事。探索各種不同的使用情景。
           </p>
         </div>
       </section>
@@ -249,11 +250,11 @@ export default function ScenarioGallery() {
       {/* CTA Section */}
       <section className="py-16">
         <div className="container text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
-            想要建立自己的自動化流程？
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+            查看我們的學習資源
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            查看我們的知識庫，學習如何建立適合您業務需求的自動化流程。
+            查看我們的知識庫，學習如何建立適合您業務需求的 SharePoint 協作系統。
           </p>
           <Link href="/knowledge-base">
             <Button>

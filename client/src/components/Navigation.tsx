@@ -33,10 +33,10 @@ export default function Navigation() {
         {/* Logo & Brand */}
         <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">PA</span>
+            <span className="text-white font-bold text-lg">SP</span>
           </div>
           <div className="hidden sm:block">
-            <div className="text-sm font-bold text-foreground leading-tight">Power Automate</div>
+            <div className="text-sm font-bold text-foreground leading-tight">SharePoint</div>
             <div className="text-xs text-muted-foreground">實戰學院</div>
           </div>
         </Link>
@@ -44,16 +44,12 @@ export default function Navigation() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <a
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-md ${
+            <Link key={item.href} href={item.href} className={`px-4 py-2 text-sm font-medium transition-colors rounded-md ${
                   isActive(item.href)
                     ? 'text-primary bg-secondary'
                     : 'text-foreground hover:text-primary hover:bg-secondary/50'
-                }`}
-              >
-                {item.label}
-              </a>
+                }`}>
+              {item.label}
             </Link>
           ))}
         </div>
@@ -83,17 +79,14 @@ export default function Navigation() {
         <div className="lg:hidden border-t border-border bg-white">
           <div className="container py-4 space-y-2">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a
-                  className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              <Link key={item.href} href={item.href} className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(item.href)
                       ? 'text-primary bg-secondary'
                       : 'text-foreground hover:text-primary hover:bg-secondary/50'
                   }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
               </Link>
             ))}
           </div>
