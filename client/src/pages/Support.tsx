@@ -78,7 +78,7 @@ export default function Support() {
         },
         {
           q: '我可以連接哪些應用程式？',
-          a: 'Power Automate 支援 500+ 個應用程式連接器，包括 Microsoft 365、Salesforce、Slack 等。',
+          a: 'SharePoint 支援 500+ 個應用程式連接器，包括 Microsoft 365、Salesforce、Slack 等。',
         },
         {
           q: '如何使用 AI Builder？',

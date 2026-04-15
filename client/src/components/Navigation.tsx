@@ -1,72 +1,83 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Search } from 'lucide-react';
-
-/**
- * Navigation Component - Enterprise SharePoint Portal Style
- * Design Philosophy: Modern Enterprise
- * - Deep blue (#1F5BA8) primary color for professional trust
- * - Clean, minimalist header with clear visual hierarchy
- * - Responsive design with mobile menu support
- * - Subtle hover effects for interactive feedback
- */
+import { Menu, X, Moon, Sun } from 'lucide-react';
+import SearchBox from './SearchBox';
+import CviLuxLogo from '../assets/CivLux-Logo.png';
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const [location] = useLocation();
 
-  const navItems = [
-    { label: '首頁', href: '/' },
-    { label: '知識庫', href: '/knowledge-base' },
-    { label: '案例庫', href: '/scenario-gallery' },
-    { label: '文件中心', href: '/document-center' },
-    { label: '技術支援', href: '/support' },
-  ];
-
-  const isActive = (href: string) => location === href;
+  // 頁面跳轉時滾動到頂部
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
+    <nav className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
       <div className="container flex items-center justify-between h-16">
         
-        {/* Logo & Brand */}
-        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">SP</span>
-          </div>
-          <div className="hidden sm:block">
-            <div className="text-sm font-bold text-foreground leading-tight">SharePoint</div>
-            <div className="text-xs text-muted-foreground">實戰學院</div>
-          </div>
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+          <img
+            src={CviLuxLogo}
+            alt="CviLux Logo"
+            className="w-16 h-16 object-contain"
+          />
+          <span className="text-foreground">SharePoint 實戰學院</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className={`px-4 py-2 text-sm font-medium transition-colors rounded-md ${
-                  isActive(item.href)
-                    ? 'text-primary bg-secondary'
-                    : 'text-foreground hover:text-primary hover:bg-secondary/50'
-                }`}>
-              {item.label}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/basics/what-is-automate" className="text-foreground hover:text-primary transition font-medium">
+            入門指南
+          </Link>
+
+          <Link href="/tutorials/operation-guide" className="text-foreground hover:text-primary transition font-medium">
+            操作教學
+          </Link>
+
+          <Link href="/scenarios/use-cases" className="text-foreground hover:text-primary transition font-medium">
+            應用情境
+          </Link>
+
+          <Link href="/support/faq" className="text-foreground hover:text-primary transition font-medium">
+            常見問題
+          </Link>
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-4">
+          <SearchBox />
+          
           <Button
             variant="ghost"
             size="icon"
-            className="text-foreground hover:bg-secondary"
+            onClick={toggleTheme}
+            className="text-foreground"
           >
-            <Search className="w-5 h-5" />
+            {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          </Button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-2 sm:gap-4">
+          <SearchBox />
+          
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="text-foreground"
+          >
+            {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
           </Button>
 
-          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground hover:bg-secondary rounded-md transition-colors"
+            className="p-2 text-foreground"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -76,19 +87,20 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border bg-white">
-          <div className="container py-4 space-y-2">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive(item.href)
-                      ? 'text-primary bg-secondary'
-                      : 'text-foreground hover:text-primary hover:bg-secondary/50'
-                  }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+        <div className="md:hidden border-t border-border bg-background">
+          <div className="container py-4 space-y-4">
+            <Link href="/basics/what-is-automate" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
+              入門指南
+            </Link>
+            <Link href="/tutorials/operation-guide" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
+              操作教學
+            </Link>
+            <Link href="/scenarios/use-cases" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
+              應用情境
+            </Link>
+            <Link href="/support/faq" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
+              常見問題
+            </Link>
           </div>
         </div>
       )}

@@ -1,88 +1,86 @@
 import { Link } from 'wouter';
 
-/**
- * Footer Component - Enterprise SharePoint Portal Style
- * Design Philosophy: Modern Enterprise
- * - Clean, professional footer with clear information hierarchy
- * - Subtle background color for visual separation
- */
-
 export default function Footer() {
   return (
-    <footer className="bg-secondary/30 border-t border-border mt-20">
-      <div className="container py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* About */}
-          <div>
-            <h3 className="font-bold text-foreground mb-4">關於</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              SharePoint 實戰學院是企業內部協作與知識共享的專業平台。
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-bold text-foreground mb-4">快速連結</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">首頁</Link>
-              </li>
-              <li>
-                <Link href="/knowledge-base" className="text-muted-foreground hover:text-primary transition-colors">知識庫</Link>
-              </li>
-              <li>
-                <Link href="/scenario-gallery" className="text-muted-foreground hover:text-primary transition-colors">案例庫</Link>
-              </li>
-              <li>
-                <Link href="/document-center" className="text-muted-foreground hover:text-primary transition-colors">文件中心</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-bold text-foreground mb-4">資源</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Microsoft 文件
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  最佳實踐
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  常見問題
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-bold text-foreground mb-4">聯絡我們</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Email: support@example.com</li>
-              <li>電話: +886 2 XXXX-XXXX</li>
-              <li>工作時間: 週一至週五 09:00-18:00</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-            <p>&copy; 2026 SharePoint 實戰學院. 保留所有權利。</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-primary transition-colors">隱私政策</a>
-              <a href="#" className="hover:text-primary transition-colors">使用條款</a>
-              <a href="#" className="hover:text-primary transition-colors">網站地圖</a>
+    <footer className="bg-slate-900 text-white py-12">
+      <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
+        {/* Brand */}
+        <div className="md:col-span-1">
+          <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+              P
             </div>
-          </div>
+            <span>Power Automate 實戰學院</span>
+          </Link>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            致力於提供最實用的 Microsoft Power Automate 教學，幫助企業實現工作流程自動化。
+          </p>
         </div>
+
+        {/* Learning */}
+        <div>
+          <h4 className="font-semibold mb-4 text-slate-200">核心資源</h4>
+          <ul className="space-y-2 text-sm text-slate-400">
+            <li>
+              <Link href="/basics/what-is-automate" className="hover:text-primary transition">
+                Power Automate 是什麼
+              </Link>
+            </li>
+            <li>
+              <Link href="/tutorials/operation-guide" className="hover:text-primary transition">
+                操作教學
+              </Link>
+            </li>
+            <li>
+              <Link href="/dashboard/chart-overview" className="hover:text-primary transition">
+                流程分析
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Support */}
+        <div>
+          <h4 className="font-semibold mb-4 text-slate-200">支援服務</h4>
+          <ul className="space-y-2 text-sm text-slate-400">
+            <li>
+              <Link href="/support/faq" className="hover:text-primary transition">
+                常見問題
+              </Link>
+            </li>
+            <li>
+              <Link href="/support/contact" className="hover:text-primary transition">
+                聯絡我們
+              </Link>
+            </li>
+            <li>
+              <Link href="/scenarios/use-cases" className="hover:text-primary transition">
+                應用情境
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Official Links */}
+        <div>
+          <h4 className="font-semibold mb-4 text-slate-200">官方連結</h4>
+          <ul className="space-y-2 text-sm text-slate-400">
+            <li>
+              <a href="https://flow.microsoft.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
+                Power Automate 網頁版
+              </a>
+            </li>
+            <li>
+              <a href="https://learn.microsoft.com/zh-tw/power-automate/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
+                Microsoft 官方文檔
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="container mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>© {new Date().getFullYear()} Power Automate 實戰學院. All rights reserved.</p>
       </div>
     </footer>
   );

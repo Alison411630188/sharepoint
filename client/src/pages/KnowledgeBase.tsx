@@ -46,7 +46,7 @@ export default function KnowledgeBase() {
     {
       id: 4,
       title: '與 Microsoft 365 整合',
-      description: '學習如何將 SharePoint 與 Teams、Outlook、Power Automate 等工具整合。',
+      description: '學習如何將 SharePoint 與 Teams、Outlook、SharePoint 等工具整合。',
       difficulty: 'intermediate',
       duration: '50 分鐘',
       lessons: 10,

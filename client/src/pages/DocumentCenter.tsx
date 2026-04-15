@@ -54,7 +54,7 @@ export default function DocumentCenter() {
     },
     {
       id: 5,
-      title: 'Power Automate 與 AI Builder 整合指南',
+      title: 'SharePoint 與 AI Builder 整合指南',
       description: '學習如何在您的流程中集成 AI 功能，實現智能自動化。',
       category: 'AI 整合',
       format: 'PDF',
@@ -63,8 +63,8 @@ export default function DocumentCenter() {
     },
     {
       id: 6,
-      title: 'SharePoint 與 Power Automate 協作指南',
-      description: '深入瞭解如何使用 Power Automate 增強 SharePoint 工作流程。',
+      title: 'SharePoint 與 SharePoint 協作指南',
+      description: '深入瞭解如何使用 SharePoint 增強 SharePoint 工作流程。',
       category: 'SharePoint 整合',
       format: 'PDF',
       size: '3.5 MB',
@@ -81,7 +81,7 @@ export default function DocumentCenter() {
     },
     {
       id: 8,
-      title: 'Power Automate 安全性與合規性指南',
+      title: 'SharePoint 安全性與合規性指南',
       description: '確保您的自動化流程符合企業安全和合規要求。',
       category: '安全性',
       format: 'PDF',
@@ -255,7 +255,7 @@ export default function DocumentCenter() {
               },
               {
                 q: '這些文件是否定期更新？',
-                a: '是的，我們定期更新所有文件以反映最新的 Power Automate 功能和最佳實踐。',
+                a: '是的，我們定期更新所有文件以反映最新的 SharePoint 功能和最佳實踐。',
               },
               {
                 q: '我可以在公司內部分享這些文件嗎？',
