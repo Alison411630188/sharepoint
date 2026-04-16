@@ -37,11 +37,11 @@ export default function Navigation() {
           </Link>
 
           <Link href="/tutorials/operation-guide" className="text-foreground hover:text-primary transition font-medium">
-            操作教學
+            網站架構
           </Link>
 
           <Link href="/scenarios/use-cases" className="text-foreground hover:text-primary transition font-medium">
-            應用情境
+            核心內容
           </Link>
 
           <Link href="/support/faq" className="text-foreground hover:text-primary transition font-medium">
@@ -93,7 +93,7 @@ export default function Navigation() {
               入門指南
             </Link>
             <Link href="/tutorials/operation-guide" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
-              操作教學
+              網站架構
             </Link>
             <Link href="/scenarios/use-cases" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
               應用情境

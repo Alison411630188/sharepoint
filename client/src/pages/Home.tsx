@@ -1,13 +1,13 @@
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, BookOpen, Users, Zap, Cpu, Cloud } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Shield, Globe, Cloud } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { MotionContainer, PageTransition, HoverScale } from '@/components/MotionContainer';
 
 const HERO_BG = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663446932732/47KbkvpLmL9hw6oikty2zt/hero-background-f72QBXASMByD6dkQHLkYv3.webp';
 const LEARNING_PATH_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663446932732/47KbkvpLmL9hw6oikty2zt/learning-path-XqbuTSKxSYNunr7DGZ28Xu.webp';
-const M365_ECOSYSTEM_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663505850654/muAFUuW7DUmEfTGA9nSUFP/image26_9f4b6c65.png';
+const M365_ECOSYSTEM_IMG = '/templates/sharepoint.png';
 
 export default function Home() {
   return (
@@ -27,20 +27,20 @@ export default function Home() {
           <div className="relative z-10 container max-w-3xl px-4">
             <MotionContainer direction="up" delay={0.1}>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-                讓協作變得簡单、強大且高效
+                打造企業專屬的雲端數位辦公室
               </h1>
             </MotionContainer>
             <MotionContainer direction="up" delay={0.2}>
               <p className="text-xl text-muted-foreground mb-8">
-                專為企業新手設計的 Microsoft SharePoint 完整指南。從文件管理到複雜的協作流程，一站式控握所有技巧。
+                專為企業同仁設計的 SharePoint 完整指南。從建立跨部門入口網到集中管理各類營運報表，一站式掌握所有協作技巧。
               </p>
             </MotionContainer>
             <MotionContainer direction="up" delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/basics/what-is-automate">
+                <Link href="/basics/what-is-sharepoint">
                   <HoverScale>
                     <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
-                      立即開始
+                      了解核心概念
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </HoverScale>
@@ -67,9 +67,9 @@ export default function Home() {
             </MotionContainer>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { icon: <Zap className="w-6 h-6 text-primary" />, title: '提高協作效率', desc: '集中管理文件，讓團隊專注於更重要的工作' },
-                { icon: <Cloud className="w-6 h-6 text-primary" />, title: '無縫整合', desc: '連接 Microsoft 365 的所有應用，實現無縫協作' },
-                { icon: <BookOpen className="w-6 h-6 text-primary" />, title: '易於上手', desc: '直觀的介面，無需技術背景，任何人都可以使用' }
+                { icon: <Users className="w-6 h-6 text-primary" />, title: '提升跨部門協作效率', desc: '集中管理專案文件與知識庫，徹底解決檔案版本混亂與資訊落差的痛點。' },
+                { icon: <Shield className="w-6 h-6 text-primary" />, title: '企業級的權限與安全', desc: '針對網站、資料夾或單一檔案設定精準的存取權限，確保機密資料安全無虞。' },
+                { icon: <Globe className="w-6 h-6 text-primary" />, title: '零程式碼建立入口網', desc: '透過直觀的視覺化網頁組件，任何人都能快速拼湊出美觀的企業或部門通訊網站。' }
               ].map((feature, idx) => (
                 <MotionContainer key={idx} direction="up" delay={idx * 0.1}>
                   <HoverScale>
@@ -97,13 +97,13 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <MotionContainer direction="left">
                 <h2 className="text-3xl font-bold mb-6">
-                  三階段學習路徑
+                  系統化學習路徑
                 </h2>
                 <div className="space-y-6">
                   {[
-                    { step: 1, stage: '第一階段', title: '理解基礎', desc: 'SharePoint 是什麼、適合誰、與其他工具的差異', link: '/basics/what-is-automate', linkText: '前往入門指南' },
-                    { step: 2, stage: '第二階段', title: '操作實踐', desc: '文件管理與協作特性的區別、建立您的第一個網站', link: '/tutorials/operation-guide', linkText: '前往操作指南' },
-                    { step: 3, stage: '第三階段', title: '進階應用', desc: '複雜網站設計、最佳實踐、實務情境應用', link: '/support/faq', linkText: '前往常見問題' }
+                    { step: 1, stage: '第一階段', title: '釐清建站架構', desc: '了解小組網站與通訊網站的核心差異，並學習如何根據專案需求選擇正確的網站範本。', link: '/basics/what-is-sharepoint', linkText: '前往入門指南' },
+                    { step: 2, stage: '第二階段', title: '檔案管理與協作', desc: '掌握文件庫的進階應用，包含版本控制、共同編輯，以及如何與 Teams 進行深度連動。', link: '/tutorials/operation-guide', linkText: '前往操作指南' },
+                    { step: 3, stage: '第三階段', title: '進階排版與權限', desc: '學習使用視覺化網頁組件打造美觀的入口網頁面，並熟悉企業級的站點權限與安全設定。', link: '/support/faq', linkText: '查看常見問題' }
                   ].map((item, idx) => (
                     <div key={idx} className="flex gap-4">
                       <div className="flex-shrink-0">
@@ -142,14 +142,14 @@ export default function Home() {
                   與 Microsoft 365 完美整合
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  SharePoint 是 Microsoft 365 生態系的核心。無論您使用 Teams、Outlook、Excel 還是 SharePoint，SharePoint 都能無縫協作。
+                  SharePoint 扮演著 Microsoft 365 生態系的地基角色。無論您使用 Teams、OneDrive 還是 Office 軟體，底層的檔案管理與協作機制都與 SharePoint 緊密相連。
                 </p>
                 <ul className="space-y-3">
                   {[
-                    '在 Teams 頻道中共享和協作',
-                    '將 Outlook 郵件附件自動保存到 SharePoint',
-                    '集中管理和備份所有文件',
-                    '在 Excel 中分析 SharePoint 資料'
+                    '在 Teams 頻道中直接存取並共同編輯 SharePoint 文件庫',
+                    '透過 OneDrive 輕鬆將 SharePoint 雲端資料夾同步至本地端',
+                    '無縫整合 Word、Excel 與 PowerPoint 實現多人即時協作',
+                    '作為企業內部跨部門專案與規範文件的集中儲存樞紐'
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -172,15 +172,15 @@ export default function Home() {
             </MotionContainer>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
-                { q: 'SharePoint 需要程式背景嗎？', a: '完全不需要！SharePoint 使用直觀的介面，任何人都可以建立和管理網站。' },
-                { q: 'SharePoint 網站和文件庫有什麼區別？', a: 'SharePoint 網站是整個協作空間，文件庫是網站中的文件存存位置。' },
-                { q: 'SharePoint 的成本是多少？', a: '多數企業可免費使用基本功能。進階功能需要付費授權。' },
-                { q: '如何開始建立我的第一個網站？', a: '訪問您的 SharePoint 管理中心，登入您的 Microsoft 帳戶，選擇網站類型並開始建立。' }
+                { q: '建立 SharePoint 網站需要寫程式碼嗎？', a: '完全不需要！SharePoint 提供直觀的拖曳式介面與豐富的網頁組件，任何人都能像拼積木一樣輕鬆建立網頁。' },
+                { q: '小組網站和通訊網站有什麼差別？', a: '小組網站專注於部門內部的私密協作與檔案共享；通訊網站則適合跨部門的公開資訊佈達與建立企業入口網。' },
+                { q: '放在 SharePoint 上的資料安全嗎？', a: '非常安全。您可以精確設定網站、文件庫甚至單一檔案的存取權限，確保只有獲得授權的成員才能查看或編輯內容。' },
+                { q: '如何開始建立我的第一個網站？', a: '進入 SharePoint 首頁後，點擊左上角的「建立網站」，根據您的需求選擇小組或通訊範本，接著跟隨畫面指引即可快速完成建置。' }
               ].map((faq, idx) => (
                 <MotionContainer key={idx} direction="up" delay={idx * 0.1}>
-                  <Card className="border-border bg-card">
+                  <Card className="border-border bg-card h-full">
                     <CardHeader>
-                      <CardTitle className="text-base text-card-foreground">{faq.q}</CardTitle>
+                      <CardTitle className="text-base text-card-foreground leading-relaxed">{faq.q}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">{faq.a}</p>
@@ -193,7 +193,7 @@ export default function Home() {
               <Link href="/support/faq">
                 <HoverScale>
                   <Button variant="outline" className="bg-background">
-                    查看所有 FAQ
+                    查看所有常見問題
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </HoverScale>
@@ -207,15 +207,15 @@ export default function Home() {
           <div className="container text-center relative">
             <MotionContainer direction="up">
               <h2 className="text-3xl font-bold mb-6">
-                準備好開始了嗎？
+                準備好開始建置網站了嗎？
               </h2>
               <p className="text-lg mb-8 text-primary-foreground/90">
-                只需 15 分鐘，您就能掌握 SharePoint 的基礎概念並建立您的第一個網站。
+                只需短短 15 分鐘，您就能釐清 SharePoint 的基礎概念，並準備好建立您的第一個專案協作空間。
               </p>
-              <Link href="/basics/what-is-automate">
+              <Link href="/basics/what-is-sharepoint">
                 <HoverScale>
                   <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                    立即開始
+                    立即開始學習
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </HoverScale>

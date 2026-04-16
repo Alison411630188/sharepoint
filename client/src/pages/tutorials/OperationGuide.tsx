@@ -1,265 +1,197 @@
-import { Link } from 'wouter';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowRight, Lightbulb, Cloud, Cpu, Layout, Zap } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { 
+  Users, Globe, FileText, Shield, 
+  History, RefreshCw, Layout, Image as ImageIcon, 
+  Link as LinkIcon, MessageSquare, ArrowRight, PlayCircle
+} from 'lucide-react';
+import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { MotionContainer, PageTransition, HoverScale } from '@/components/MotionContainer';
 
-export default function OperationGuide() {
+export default function OperationTutorial() {
+  const [activeTab, setActiveTab] = useState<'team' | 'communication'>('team');
+
   return (
-    <PageTransition>
-      <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-        
-        {/* Header */}
-        <div className="bg-primary/5 border-b border-border py-12">
-          <div className="container">
-            <MotionContainer direction="up">
-              <h1 className="text-4xl font-bold text-foreground mb-4">操作指南：雲端流程 vs 桌面流程</h1>
-              <p className="text-lg text-muted-foreground">
-                本章節將完整說明 SharePoint 的兩種主要流程類型。您可以根據您的自動化需求選擇最適合的方式。
-              </p>
-            </MotionContainer>
-          </div>
-        </div>
+    <div className="min-h-screen bg-background text-foreground">
 
-        {/* Main Content */}
-        <div className="container py-12">
-          <div className="max-w-4xl mx-auto">
-            
-            {/* Comparison Intro */}
-            <section className="mb-16">
-              <MotionContainer direction="up">
-                <h2 className="text-2xl font-bold text-foreground mb-6">選擇您的自動化方式</h2>
-                <p className="text-muted-foreground mb-8">
-                  Microsoft SharePoint 提供雲端流程與桌面流程，兩者各有優勢。雲端流程適合連接應用程式和服務，桌面流程適合自動化桌面應用程式。
+      {/* Header Section */}
+      <section className="bg-primary/5 border-b border-border py-16">
+        <div className="container">
+          <div className="flex items-center gap-3 mb-4">
+            <PlayCircle className="w-8 h-8 text-primary" />
+            <h1 className="text-4xl font-bold text-foreground">SharePoint 實務操作指南</h1>
+          </div>
+          <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            這是一份專為企業日常辦公設計的完整操作手冊。我們將帶您從零開始，選擇正確的網站架構、熟練掌握雲端文件庫的進階管理技巧，並學習如何運用視覺化組件打造出專業的內部網站頁面。透過這些實務技巧，您將能大幅提升團隊的協作效率與數位化管理能力。
+          </p>
+        </div>
+      </section>
+
+      {/* Section 1: 網站架構選擇 */}
+      <section className="py-20 border-b border-border">
+        <div className="container max-w-5xl">
+          <div className="mb-10">
+            <Badge variant="outline" className="mb-3">第一步：奠定基礎</Badge>
+            <h2 className="text-3xl font-bold mb-4">選擇最適合的網站架構</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              建立 SharePoint 網站的第一步，就是根據您的實際需求選擇正確的範本。Microsoft 提供了小組網站與通訊網站兩種核心架構，兩者在權限預設與版面配置上皆有不同的優勢，正確的選擇能讓後續的維護工作事半功倍。
+            </p>
+          </div>
+
+          <div className="flex bg-secondary/50 p-1 rounded-lg mb-8">
+            <button
+              onClick={() => setActiveTab('team')}
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md font-medium transition-colors ${
+                activeTab === 'team'
+                  ? 'bg-background shadow-sm text-foreground border-b-2 border-primary'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <Users className="w-5 h-5" />
+              小組網站 (Team Site)
+            </button>
+            <button
+              onClick={() => setActiveTab('communication')}
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md font-medium transition-colors ${
+                activeTab === 'communication'
+                  ? 'bg-background shadow-sm text-foreground border-b-2 border-primary'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <Globe className="w-5 h-5" />
+              通訊網站 (Communication Site)
+            </button>
+          </div>
+
+          <div className="bg-secondary/20 rounded-xl p-8 border border-border">
+            {activeTab === 'team' ? (
+              <div className="animate-in fade-in duration-300">
+                <h3 className="text-xl font-bold mb-3">打造私密的高效協作空間</h3>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  小組網站是專為特定專案團隊或部門打造的專屬虛擬辦公室。它具備強大的文件庫與版本控制功能，讓團隊成員可以即時共同編輯同一份文件，徹底擺脫檔案版本混亂的困擾。同時，它的權限控管相當嚴密，只有被邀請為群組成員的使用者才能進入並查看內容，確保機密專案資料絕不外流。最重要的是，它預設與 Microsoft Teams 深度整合，讓您能在熟悉的通訊軟體中直接處理網站工作。
                 </p>
-              </MotionContainer>
-
-              <Tabs defaultValue="cloud" className="w-full">
-                <MotionContainer direction="up" delay={0.1}>
-                  <TabsList className="grid w-full grid-cols-2 mb-8 bg-muted text-muted-foreground">
-                    <TabsTrigger value="cloud" className="flex items-center gap-2 data-[state=active]:bg-background data-[state=active]:text-foreground">
-                      <Cloud className="w-4 h-4" /> 雲端流程
-                    </TabsTrigger>
-                    <TabsTrigger value="desktop" className="flex items-center gap-2 data-[state=active]:bg-background data-[state=active]:text-foreground">
-                      <Cpu className="w-4 h-4" /> 桌面流程
-                    </TabsTrigger>
-                  </TabsList>
-                </MotionContainer>
-
-                {/* Cloud Flows Content */}
-                <TabsContent value="cloud" className="space-y-8">
-                  <MotionContainer direction="up">
-                    <div className="bg-muted/50 rounded-xl p-8 border border-border">
-                      <h3 className="text-xl font-bold mb-4 text-foreground">什麼是雲端流程？</h3>
-                      <p className="text-muted-foreground mb-6">
-                        雲端流程是在 Microsoft 雲端平台上執行的自動化工作流程，用於連接不同的應用程式和服務。它們無需安裝任何軟體，直接在瀏覽器中建立和管理。
-                      </p>
-                      
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <HoverScale>
-                          <Card className="border-border bg-card h-full">
-                            <CardHeader>
-                              <CardTitle className="text-base flex items-center gap-2 text-card-foreground">
-                                <Layout className="w-4 h-4 text-primary" /> 三種類型
-                              </CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-sm text-muted-foreground">
-                              <ul className="space-y-2">
-                                <li>• <strong>自動化流程：</strong> 由事件觸發（如收到郵件）</li>
-                                <li>• <strong>即時流程：</strong> 按下按鈕手動觸發</li>
-                                <li>• <strong>排程流程：</strong> 按照時間表自動執行</li>
-                              </ul>
-                            </CardContent>
-                          </Card>
-                        </HoverScale>
-                        <HoverScale>
-                          <Card className="border-border bg-card h-full">
-                            <CardHeader>
-                              <CardTitle className="text-base flex items-center gap-2 text-card-foreground">
-                                <Lightbulb className="w-4 h-4 text-primary" /> 適用場景
-                              </CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-sm text-muted-foreground">
-                              <ul className="space-y-2">
-                                <li>• 連接 Outlook、Teams、SharePoint 等應用</li>
-                                <li>• 自動發送通知和郵件</li>
-                                <li>• 資料同步和備份</li>
-                              </ul>
-                            </CardContent>
-                          </Card>
-                        </HoverScale>
-                      </div>
-                    </div>
-                  </MotionContainer>
-
-                  {/* Cloud Flow Steps */}
-                  <MotionContainer direction="up">
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-foreground">建立雲端流程的步驟</h3>
-                      {[
-                        { step: 1, title: '登入 SharePoint', desc: '訪問 https://flow.microsoft.com，使用您的 Microsoft 帳戶登入' },
-                        { step: 2, title: '選擇流程類型', desc: '根據需求選擇自動化、即時或排程流程' },
-                        { step: 3, title: '設定觸發器', desc: '選擇啟動流程的事件，例如「收到郵件」' },
-                        { step: 4, title: '新增動作', desc: '使用連接器新增要執行的動作，如「發送郵件」' },
-                        { step: 5, title: '測試並保存', desc: '測試流程是否正常運作，然後保存' }
-                      ].map((item) => (
-                        <MotionContainer key={item.step} direction="up" delay={item.step * 0.05}>
-                          <div className="flex gap-4 p-4 bg-card rounded-lg border border-border hover:border-primary/30 transition-colors">
-                            <div className="flex-shrink-0">
-                              <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-                                {item.step}
-                              </div>
-                            </div>
-                            <div className="flex-1">
-                              <p className="font-semibold text-foreground">{item.title}</p>
-                              <p className="text-sm text-muted-foreground">{item.desc}</p>
-                            </div>
-                          </div>
-                        </MotionContainer>
-                      ))}
-                    </div>
-                  </MotionContainer>
-                </TabsContent>
-
-                {/* Desktop Flows Content */}
-                <TabsContent value="desktop" className="space-y-8">
-                  <MotionContainer direction="up">
-                    <div className="bg-muted/50 rounded-xl p-8 border border-border">
-                      <h3 className="text-xl font-bold mb-4 text-foreground">什麼是桌面流程？</h3>
-                      <p className="text-muted-foreground mb-6">
-                        桌面流程（RPA - 機器人流程自動化）用於自動化桌面應用程式和舊版系統。它可以模擬人類操作，如點擊按鈕、輸入文字、複製資料等。
-                      </p>
-                      
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <HoverScale>
-                          <Card className="border-border bg-card h-full">
-                            <CardHeader>
-                              <CardTitle className="text-base flex items-center gap-2 text-card-foreground">
-                                <Cpu className="w-4 h-4 text-primary" /> 主要功能
-                              </CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-sm text-muted-foreground">
-                              <ul className="space-y-2">
-                                <li>• 自動化桌面應用程式操作</li>
-                                <li>• 從網站擷取資料</li>
-                                <li>• Excel 自動化和資料處理</li>
-                              </ul>
-                            </CardContent>
-                          </Card>
-                        </HoverScale>
-                        <HoverScale>
-                          <Card className="border-border bg-card h-full">
-                            <CardHeader>
-                              <CardTitle className="text-base flex items-center gap-2 text-card-foreground">
-                                <Zap className="w-4 h-4 text-primary" /> 適用場景
-                              </CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-sm text-muted-foreground">
-                              <ul className="space-y-2">
-                                <li>• 舊版系統自動化</li>
-                                <li>• 終端模擬器操作</li>
-                                <li>• 複雜的資料轉換</li>
-                              </ul>
-                            </CardContent>
-                          </Card>
-                        </HoverScale>
-                      </div>
-                    </div>
-                  </MotionContainer>
-
-                  {/* Desktop Flow Steps */}
-                  <MotionContainer direction="up">
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-foreground">建立桌面流程的步驟</h3>
-                      {[
-                        { step: 1, title: '安裝 SharePoint Desktop', desc: '下載並安裝 SharePoint Desktop 應用程式到您的電腦' },
-                        { step: 2, title: '建立新流程', desc: '開啟應用程式，點擊「新建流程」建立桌面流程' },
-                        { step: 3, title: '錄製或設計', desc: '使用錄製功能記錄您的操作，或手動設計流程' },
-                        { step: 4, title: '新增動作', desc: '新增點擊、輸入、複製等動作來自動化您的工作' },
-                        { step: 5, title: '測試並部署', desc: '測試流程，確保所有操作正確執行' }
-                      ].map((item) => (
-                        <MotionContainer key={item.step} direction="up" delay={item.step * 0.05}>
-                          <div className="flex gap-4 p-4 bg-card rounded-lg border border-border hover:border-primary/30 transition-colors">
-                            <div className="flex-shrink-0">
-                              <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-                                {item.step}
-                              </div>
-                            </div>
-                            <div className="flex-1">
-                              <p className="font-semibold text-foreground">{item.title}</p>
-                              <p className="text-sm text-muted-foreground">{item.desc}</p>
-                            </div>
-                          </div>
-                        </MotionContainer>
-                      ))}
-                    </div>
-                  </MotionContainer>
-                </TabsContent>
-              </Tabs>
-            </section>
-
-            {/* Comparison Table */}
-            <section className="mb-16">
-              <MotionContainer direction="up">
-                <h2 className="text-2xl font-bold text-foreground mb-8">雲端流程 vs 桌面流程對比</h2>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-border">
-                        <th className="text-left p-3 font-bold text-foreground">特性</th>
-                        <th className="text-left p-3 font-bold text-foreground">雲端流程</th>
-                        <th className="text-left p-3 font-bold text-foreground">桌面流程</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {[
-                        { feature: '執行位置', cloud: '雲端', desktop: '本機電腦' },
-                        { feature: '安裝需求', cloud: '無需安裝', desktop: '需要安裝軟體' },
-                        { feature: '應用連接', cloud: '連接雲端應用', desktop: '自動化桌面應用' },
-                        { feature: '建立難度', cloud: '簡單', desktop: '中等到複雜' },
-                        { feature: '成本', cloud: '免費到付費', desktop: '免費到付費' },
-                      ].map((row, idx) => (
-                        <tr key={idx} className="border-b border-border hover:bg-muted/50 transition-colors">
-                          <td className="p-3 font-semibold text-foreground">{row.feature}</td>
-                          <td className="p-3 text-muted-foreground">{row.cloud}</td>
-                          <td className="p-3 text-muted-foreground">{row.desktop}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </MotionContainer>
-            </section>
-
-            {/* Next Steps */}
-            <MotionContainer direction="up">
-              <div className="text-center py-12 border-t border-border">
-                <h3 className="text-xl font-bold mb-6 text-foreground">準備好開始建立您的第一個流程了嗎？</h3>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/support/faq">
-                    <HoverScale>
-                      <Button size="lg" variant="outline" className="px-10 bg-background text-foreground hover:bg-muted">
-                        查看常見問題
-                      </Button>
-                    </HoverScale>
-                  </Link>
-                  <Link href="/support/contact">
-                    <HoverScale>
-                      <Button size="lg" className="px-10 text-primary-foreground gap-2">
-                        獲取幫助 <ArrowRight className="w-4 h-4" />
-                      </Button>
-                    </HoverScale>
-                  </Link>
-                </div>
               </div>
-            </MotionContainer>
-
+            ) : (
+              <div className="animate-in fade-in duration-300">
+                <h3 className="text-xl font-bold mb-3">建立專業的企業資訊樞紐</h3>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  通訊網站的主要目的是向廣泛的受眾進行單向的資訊廣播。它非常適合發佈公司最新消息、活動精采回顧或是重要政策宣導，讓全體員工都能在第一時間掌握企業動態。系統提供了豐富且美觀的網頁視覺化元件，讓您不需要撰寫任何程式碼，就能拼湊出具備專業質感的企業入口網頁面。在這裡，通常只有少數管理者擁有發佈權限，而大多數員工則以閱讀和瀏覽為主。
+                </p>
+              </div>
+            )}
           </div>
         </div>
-        <Footer />
-      </div>
-    </PageTransition>
+      </section>
+
+      {/* Section 2: 文件庫實戰 */}
+      <section className="py-20 border-b border-border bg-secondary/10">
+        <div className="container max-w-5xl">
+          <div className="mb-10">
+            <Badge variant="outline" className="mb-3">第二步：核心應用</Badge>
+            <h2 className="text-3xl font-bold mb-4">掌握文件庫管理神技</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              文件庫是整個 SharePoint 平台中最具價值的功能區塊。它不僅僅是一個雲端儲存空間，更是一套具備智慧化管理機制的數位檔案櫃，能大幅改變您與團隊處理日常文件的方式。
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="hover:shadow-md transition-shadow">
+              <CardHeader>
+                <RefreshCw className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">本機同步體驗</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  透過與 OneDrive 的完美結合，您可以將 SharePoint 上的雲端文件庫直接同步到電腦的本機資料夾中。這意味著您可以像平常操作本機檔案一樣，直接在檔案總管中拖曳、分類與開啟文件，而所有變更都會在背景自動且即時地同步回雲端，兼顧了操作的直覺性與雲端的便利性。
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-md transition-shadow">
+              <CardHeader>
+                <History className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">自動版本歷程記錄</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  每當您或同事儲存文件時，系統會在背景自動建立一個新的版本紀錄。無論是不小心覆蓋了重要段落，還是需要找回上週的報表數據，您都可以隨時點擊檔案的歷程記錄，輕鬆預覽並一鍵還原到過去的任何一個時間點，再也不需要手動另存一堆帶有日期的備份檔案。
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-md transition-shadow">
+              <CardHeader>
+                <Shield className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">精準的共用與權限</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  想要分享單一檔案給跨部門同事，卻不想讓他們看到整個資料夾？您可以針對個別檔案產生專屬的共用連結，並設定「僅供檢視」或「允許編輯」的權限，甚至能夠設定連結的有效期限與密碼保護，確保每一次的資訊傳遞都在您的絕對掌控之中。
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: 網頁組件與排版 */}
+      <section className="py-20">
+        <div className="container max-w-5xl">
+          <div className="mb-10">
+            <Badge variant="outline" className="mb-3">第三步：優化視覺</Badge>
+            <h2 className="text-3xl font-bold mb-4">活用網頁組件豐富版面</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              一個吸引人的網站不僅需要豐富的內容，更需要清晰的視覺動線。SharePoint 將網頁設計簡化為直觀的「網頁組件 (Web Parts)」拼圖遊戲，您只需點擊、拖曳，就能為團隊打造出美觀且高度實用的專屬頁面。
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
+              <Layout className="w-8 h-8 text-primary mb-4" />
+              <h4 className="font-bold mb-2">英雄看板 (Hero)</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                這是最適合放在首頁頂端的視覺焦點，能透過高質感的大圖層疊排版，強勢吸引訪客目光，並引導他們點擊最重要的焦點新聞或專案連結。
+              </p>
+            </div>
+            <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
+              <LinkIcon className="w-8 h-8 text-primary mb-4" />
+              <h4 className="font-bold mb-2">快速連結 (Quick Links)</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                將團隊日常最常使用的外部系統、打卡系統或重要規章表單，整理成帶有精美圖示的按鈕矩陣，讓入口網站真正成為同仁辦公的第一站。
+              </p>
+            </div>
+            <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
+              <ImageIcon className="w-8 h-8 text-primary mb-4" />
+              <h4 className="font-bold mb-2">影像圖庫 (Image Gallery)</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                完美的活動紀錄展示區，您可以將公司尾牙、部門聚餐或廠區視察的相片以輪播或磚塊拼貼的方式呈現，快速凝聚團隊向心力。
+              </p>
+            </div>
+            <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
+              <MessageSquare className="w-8 h-8 text-primary mb-4" />
+              <h4 className="font-bold mb-2">最新消息 (News)</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                系統會自動彙整並以圖文並茂的卡片形式，依序展示網站內發佈的各項公告與文章，確保重要佈達不會被淹沒在茫茫資訊中。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container text-center">
+          <h2 className="text-2xl font-bold mb-6">準備好親自實作了嗎？</h2>
+          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            理論已經裝備完畢，現在就開啟您的 SharePoint 管理中心，嘗試建立您的第一個專案小組網站，並上傳一份測試檔案體驗版本歷程記錄的強大功能吧！
+          </p>
+          <Button size="lg" className="bg-background text-primary hover:bg-secondary">
+            前往微軟登入入口 <ArrowRight className="ml-2 w-4 h-4" />
+          </Button>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
   );
 }
