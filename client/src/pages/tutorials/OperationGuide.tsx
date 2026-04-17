@@ -3,11 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
-  Users, Globe, FileText, Shield, 
-  History, RefreshCw, Layout, Image as ImageIcon, 
-  Link as LinkIcon, MessageSquare, ArrowRight, PlayCircle
+  Users, Globe, Shield, 
+  History, RefreshCw,
+  Link as LinkIcon, MessageSquare, ArrowRight, PlayCircle, FolderOpen, UserCircle
 } from 'lucide-react';
-import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
 export default function OperationTutorial() {
@@ -134,7 +133,7 @@ export default function OperationTutorial() {
         </div>
       </section>
 
-      {/* Section 3: 網頁組件與排版 */}
+      {/* Section 3: 網頁組件與排版 (正確版) */}
       <section className="py-20">
         <div className="container max-w-5xl">
           <div className="mb-10">
@@ -147,10 +146,10 @@ export default function OperationTutorial() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
-              <Layout className="w-8 h-8 text-primary mb-4" />
-              <h4 className="font-bold mb-2">英雄看板 (Hero)</h4>
+              <FolderOpen className="w-8 h-8 text-primary mb-4" />
+              <h4 className="font-bold mb-2">文件庫 (Document Library)</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                這是最適合放在首頁頂端的視覺焦點，能透過高質感的大圖層疊排版，強勢吸引訪客目光，並引導他們點擊最重要的焦點新聞或專案連結。
+                將團隊最常使用的資料夾或重要檔案直接嵌入在首頁。同仁一登入就能快速預覽並存取最新文件，不需要再層層點擊進入後台尋找。
               </p>
             </div>
             <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
@@ -161,17 +160,17 @@ export default function OperationTutorial() {
               </p>
             </div>
             <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
-              <ImageIcon className="w-8 h-8 text-primary mb-4" />
-              <h4 className="font-bold mb-2">影像圖庫 (Image Gallery)</h4>
+              <UserCircle className="w-8 h-8 text-primary mb-4" />
+              <h4 className="font-bold mb-2">人員 (People)</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                完美的活動紀錄展示區，您可以將公司尾牙、部門聚餐或廠區視察的相片以輪播或磚塊拼貼的方式呈現，快速凝聚團隊向心力。
+                在首頁展示專案團隊成員或各部門聯絡窗口的個人檔案。只要輸入姓名，系統就會自動帶出他們的職稱與聯絡方式，方便跨部門溝通。
               </p>
             </div>
             <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
               <MessageSquare className="w-8 h-8 text-primary mb-4" />
               <h4 className="font-bold mb-2">最新消息 (News)</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                系統會自動彙整並以圖文並茂的卡片形式，依序展示網站內發佈的各項公告與文章，確保重要佈達不會被淹沒在茫茫資訊中。
+                系統會自動彙整網站內發佈的各項公告與文章，並以圖文並茂的卡片形式依序展示，確保重要佈達不會被淹沒在茫茫資訊中。
               </p>
             </div>
           </div>
@@ -185,11 +184,12 @@ export default function OperationTutorial() {
           <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             理論已經裝備完畢，現在就開啟您的 SharePoint 管理中心，嘗試建立您的第一個專案小組網站，並上傳一份測試檔案體驗版本歷程記錄的強大功能吧！
           </p>
-          <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fm365.cloud.microsoft%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=639119917446815896.NWZlMzE1ZDktYzUyMC00M2I1LTk2M2EtNWU2NTllMmMxZmIxMGJjNDcwZTctMDA4NC00YTQ4LTk1ZDctYmY0N2FiOWNhNWFm&ui_locales=zh-TW&mkt=zh-TW&prompt=select_account&client-request-id=020a395b-e9a8-4d6c-8c74-feb8f40230f7&state=4fNVzUvnqaXKGdvGwPIecCNAdmAOc1UlbrR7Rst9mRfoAUymeXuNWZhWkVPanxF4h4gk-Fg_JyIYTZHV9gYbA09SRHPMdPC3EilO2zFPE6W0EKt6QHtkCIVj3V9BCn0sJcL82yw-oSb6C0nL4b-X_IH5xeDvP9FvVmT4p18yju1-d-9D91S9eZNdSVBR6_U_fVzdIIUG9_-Qt9vJWeMN4-1KJsnycHX7R--oIUrt39rrZj2N0jW7h3ENgjEUuiY0XxmjGgLJ9AYqbzqAycwlIMCp_-c-thuVpyxB2KZ4L6YxuDs24qKHkhUwX5bR0nkKzkqmQjAeD-QLmQ9WABsdL96N_XkoTxMXbE779KkDJ6MwES5AKLyyeofmIDOA5W5UhyzvW2D39GiY1BPTRw4cCh_m2G2cnBbnHHNuudI6SHmTxJmkghJVHOqF5OSUuO9z7UFerf9LIoq9g0ery3FIMFxjUfdOvyG78MozDs0VaOD3kfaB2qTnIqLFmfii7M-jSogi6UyeTdR2wurN6v3Ezw&x-client-SKU=ID_NET8_0&x-client-ver=8.14.0.0">
-  <Button size="lg" className="bg-background text-primary hover:bg-secondary">
-    前往微軟登入入口 <ArrowRight className="ml-2 w-4 h-4" />
-  </Button>
-</a>
+          {/* 正確的通用官方登入網址，並加上開新分頁功能 */}
+          <a href="https://portal.office.com" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-background text-primary hover:bg-secondary">
+              前往微軟登入入口 <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </a>
         </div>
       </section>
 
