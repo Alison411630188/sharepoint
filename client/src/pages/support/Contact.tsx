@@ -41,7 +41,7 @@ export default function Contact() {
             <MotionContainer direction="up">
               <h1 className="text-4xl font-bold text-foreground mb-4">聯絡與支援</h1>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                如果您有任何問題、建議或反饻，歡迎與我們联絡。我們致力於提供最優質的 SharePoint 教學資源。
+                如果您有任何問題、建議或反饋，歡迎與我們聯絡。我們致力於提供最優質的 SharePoint 教學資源。
               </p>
             </MotionContainer>
           </div>
@@ -104,15 +104,15 @@ export default function Contact() {
                   <Card className="border-border bg-card h-full">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2 text-card-foreground">
-                        <Globe className="w-5 h-5 text-primary" /> Microsoft Planner 官方文件
+                        <Globe className="w-5 h-5 text-primary" /> Microsoft SharePoint 官方文件
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground mb-6">
-                        查看 Microsoft 官方的 Planner 文件、最新更新日誌與技術支援資源。
+                        查看 Microsoft 官方的 SharePoint 文件、最新更新日誌與技術支援資源。
                       </p>
                       <a
-                        href="https://support.microsoft.com/office/planner"
+                        href="https://learn.microsoft.com/zh-tw/sharepoint/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline text-sm font-semibold inline-flex items-center gap-1"
@@ -154,7 +154,7 @@ export default function Contact() {
               <section className="bg-primary text-primary-foreground rounded-3xl p-12 text-center">
                 <h3 className="text-2xl font-bold mb-4">準備好開始學習了嗎？</h3>
                 <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-                  回到首頁，開始您的 Microsoft Planner 學習之旅。
+                  回到首頁，開始您的 Microsoft SharePoint 學習之旅。
                 </p>
                 <Link href="/">
                   <HoverScale>
