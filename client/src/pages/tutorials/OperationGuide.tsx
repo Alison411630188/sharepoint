@@ -185,9 +185,11 @@ export default function OperationTutorial() {
           <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             理論已經裝備完畢，現在就開啟您的 SharePoint 管理中心，嘗試建立您的第一個專案小組網站，並上傳一份測試檔案體驗版本歷程記錄的強大功能吧！
           </p>
-          <Button size="lg" className="bg-background text-primary hover:bg-secondary">
-            前往微軟登入入口 <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+          <a href="https://portal.office.com" target="_blank" rel="noopener noreferrer">
+  <Button size="lg" className="bg-background text-primary hover:bg-secondary">
+    前往微軟登入入口 <ArrowRight className="ml-2 w-4 h-4" />
+  </Button>
+</a>
         </div>
       </section>
 
