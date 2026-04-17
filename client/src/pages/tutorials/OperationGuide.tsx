@@ -185,7 +185,7 @@ export default function OperationTutorial() {
             理論已經裝備完畢，現在就開啟您的 SharePoint 管理中心，嘗試建立您的第一個專案小組網站，並上傳一份測試檔案體驗版本歷程記錄的強大功能吧！
           </p>
           {/* 正確的通用官方登入網址，並加上開新分頁功能 */}
-          <a href="https://portal.office.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fm365.cloud.microsoft%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=639119917446815896.NWZlMzE1ZDktYzUyMC00M2I1LTk2M2EtNWU2NTllMmMxZmIxMGJjNDcwZTctMDA4NC00YTQ4LTk1ZDctYmY0N2FiOWNhNWFm&ui_locales=zh-TW&mkt=zh-TW&prompt=select_account&client-request-id=020a395b-e9a8-4d6c-8c74-feb8f40230f7&state=4fNVzUvnqaXKGdvGwPIecCNAdmAOc1UlbrR7Rst9mRfoAUymeXuNWZhWkVPanxF4h4gk-Fg_JyIYTZHV9gYbA09SRHPMdPC3EilO2zFPE6W0EKt6QHtkCIVj3V9BCn0sJcL82yw-oSb6C0nL4b-X_IH5xeDvP9FvVmT4p18yju1-d-9D91S9eZNdSVBR6_U_fVzdIIUG9_-Qt9vJWeMN4-1KJsnycHX7R--oIUrt39rrZj2N0jW7h3ENgjEUuiY0XxmjGgLJ9AYqbzqAycwlIMCp_-c-thuVpyxB2KZ4L6YxuDs24qKHkhUwX5bR0nkKzkqmQjAeD-QLmQ9WABsdL96N_XkoTxMXbE779KkDJ6MwES5AKLyyeofmIDOA5W5UhyzvW2D39GiY1BPTRw4cCh_m2G2cnBbnHHNuudI6SHmTxJmkghJVHOqF5OSUuO9z7UFerf9LIoq9g0ery3FIMFxjUfdOvyG78MozDs0VaOD3kfaB2qTnIqLFmfii7M-jSogi6UyeTdR2wurN6v3Ezw&x-client-SKU=ID_NET8_0&x-client-ver=8.14.0.0" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-background text-primary hover:bg-secondary">
               前往微軟登入入口 <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
