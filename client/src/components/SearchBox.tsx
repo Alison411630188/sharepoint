@@ -11,46 +11,47 @@ interface SearchResult {
   excerpt: string;
 }
 
+// 👇 更新為 SharePoint 實戰學院的最新網頁內容
 const searchData: SearchResult[] = [
   // Basics
   {
-    title: 'Planner 是什麼？',
-    path: '/basics/what-is-planner',
+    title: '入門指南',
+    path: '/basics/what-is-automate',
     category: '入門',
-    excerpt: '了解 Microsoft Planner 的核心概念、主要功能和適用場景',
+    excerpt: '了解 Microsoft SharePoint 的核心概念、主要功能和適用場景',
   },
   // Tutorials
   {
-    title: '操作指南 (網頁版 vs Teams 版)',
+    title: '網站架構與操作指南',
     path: '/tutorials/operation-guide',
     category: '教學',
-    excerpt: '完整說明 Planner 在網頁版與 Teams 版的使用介面與建立計畫步驟',
+    excerpt: '學習如何從零開始建立 SharePoint 專屬小組網站與設定基本架構',
   },
   {
-    title: '任務管理教學',
-    path: '/tutorials/task-management',
-    category: '教學',
-    excerpt: '學習如何建立任務、分配人員、設定優先順序和追蹤進度',
+    title: '設定中樞網站 (Hub Site) 關聯',
+    path: '/hub-site',
+    category: '核心功能',
+    excerpt: '將獨立網站連接至部門中樞網站，共用企業導覽列與體驗強大的跨網站搜尋功能',
   },
   // Scenarios
   {
-    title: '常見使用情境',
+    title: '核心內容與實務情境',
     path: '/scenarios/use-cases',
     category: '應用',
-    excerpt: '探索專案管理、活動籌備、日常運維等實際應用案例',
+    excerpt: '探索企業入口網站、部門文件集中管理、最新消息發布等實際應用案例',
   },
   // Support
   {
     title: '常見問題 FAQ',
     path: '/support/faq',
     category: '支援',
-    excerpt: '解決登入問題、權限設定、Teams 整合等常見疑惑',
+    excerpt: '解決存取權限設定、中樞網站關聯失敗、Teams 整合等常見疑惑',
   },
   {
     title: '聯絡我們',
     path: '/support/contact',
     category: '支援',
-    excerpt: '聯絡方式、支援管道與快速連結',
+    excerpt: '聯絡系統管理員、支援管道與快速協助連結',
   },
 ];
 
@@ -91,6 +92,7 @@ export default function SearchBox() {
     setLocation(path);
     setIsOpen(false);
     setQuery('');
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // 順手加上點擊後平滑回到頂部的功能！
   };
 
   return (
@@ -98,7 +100,7 @@ export default function SearchBox() {
       <div
         className={cn(
           "flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/50 border border-border cursor-pointer hover:bg-secondary transition-colors w-10 md:w-48",
-          isOpen && "bg-white ring-2 ring-primary/20 border-primary/50"
+          isOpen && "bg-background ring-2 ring-primary/20 border-primary/50"
         )}
         onClick={() => setIsOpen(true)}
       >
@@ -107,15 +109,15 @@ export default function SearchBox() {
       </div>
 
       {isOpen && (
-        <div className="absolute right-0 top-12 w-[90vw] md:w-[400px] bg-white border border-border rounded-xl shadow-2xl overflow-hidden z-[100]">
+        <div className="absolute right-0 top-12 w-[90vw] md:w-[400px] bg-background border border-border rounded-xl shadow-2xl overflow-hidden z-[100]">
           <div className="p-4 border-b border-border flex items-center gap-2">
             <Search className="w-4 h-4 text-muted-foreground" />
             <Input
               autoFocus
-              placeholder="搜尋關鍵字（例如：Teams, 任務）..."
+              placeholder="搜尋關鍵字（例如：中樞網站, 權限）..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="border-none focus-visible:ring-0 p-0 h-auto text-base"
+              className="border-none focus-visible:ring-0 p-0 h-auto text-base bg-transparent"
             />
             {query && (
               <button onClick={() => setQuery('')}>
