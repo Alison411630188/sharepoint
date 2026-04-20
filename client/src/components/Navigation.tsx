@@ -11,17 +11,28 @@ export default function Navigation() {
   const { theme, toggleTheme } = useTheme();
   const [location] = useLocation();
 
-  // 頁面跳轉時滾動到頂部
+  // 頁面跳轉時滾動到頂部 (主要針對不同頁面的跳轉)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  // 👇 1. 新增：電腦版專用的平滑滾動函數
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // 👇 2. 新增：手機版專用，點擊後「關閉選單」並「平滑滾動」
+  const handleMobileLinkClick = () => {
+    setIsOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
       <div className="container flex items-center justify-between h-16">
         
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+        <Link href="/" onClick={handleLinkClick} className="flex items-center gap-2 font-bold text-lg">
           <img
             src={CviLuxLogo}
             alt="CviLux Logo"
@@ -30,21 +41,26 @@ export default function Navigation() {
           <span className="text-foreground">SharePoint 實戰學院</span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation (電腦版選單) */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/basics/what-is-automate" className="text-foreground hover:text-primary transition font-medium">
+          {/* 👇 3. 電腦版連結全部加上 onClick={handleLinkClick} */}
+          <Link href="/basics/what-is-automate" onClick={handleLinkClick} className="text-foreground hover:text-primary transition font-medium">
             入門指南
           </Link>
 
-          <Link href="/tutorials/operation-guide" className="text-foreground hover:text-primary transition font-medium">
+          <Link href="/tutorials/operation-guide" onClick={handleLinkClick} className="text-foreground hover:text-primary transition font-medium">
             網站架構
           </Link>
 
-          <Link href="/scenarios/use-cases" className="text-foreground hover:text-primary transition font-medium">
+          <Link href="/hub-site" onClick={handleLinkClick} className="text-foreground hover:text-primary transition font-medium">
+            中樞網站
+          </Link>
+
+          <Link href="/scenarios/use-cases" onClick={handleLinkClick} className="text-foreground hover:text-primary transition font-medium">
             核心內容
           </Link>
 
-          <Link href="/support/faq" className="text-foreground hover:text-primary transition font-medium">
+          <Link href="/support/faq" onClick={handleLinkClick} className="text-foreground hover:text-primary transition font-medium">
             常見問題
           </Link>
         </div>
@@ -85,20 +101,26 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation (手機版漢堡選單) */}
       {isOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 space-y-4">
-            <Link href="/basics/what-is-automate" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
+            {/* 👇 4. 手機版連結全部加上 onClick={handleMobileLinkClick} */}
+            <Link href="/basics/what-is-automate" onClick={handleMobileLinkClick} className="block font-semibold text-foreground">
               入門指南
             </Link>
-            <Link href="/tutorials/operation-guide" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
+            <Link href="/tutorials/operation-guide" onClick={handleMobileLinkClick} className="block font-semibold text-foreground">
               網站架構
             </Link>
-            <Link href="/scenarios/use-cases" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
-              應用情境
+            
+            <Link href="/hub-site" onClick={handleMobileLinkClick} className="block font-semibold text-foreground">
+              中樞網站
             </Link>
-            <Link href="/support/faq" className="block font-semibold text-foreground" onClick={() => setIsOpen(false)}>
+
+            <Link href="/scenarios/use-cases" onClick={handleMobileLinkClick} className="block font-semibold text-foreground">
+              核心內容
+            </Link>
+            <Link href="/support/faq" onClick={handleMobileLinkClick} className="block font-semibold text-foreground">
               常見問題
             </Link>
           </div>
