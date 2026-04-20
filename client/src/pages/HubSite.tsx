@@ -66,7 +66,8 @@ export default function HubSite() {
   ];
 
   return (
-    <PageTransition>
+    // 👇 2. 加上獨一無二的 key，強制每次切換進來都要播動畫！
+    <PageTransition key="hub-site">
       <div className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
         
         {/* Header Section */}
