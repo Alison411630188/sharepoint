@@ -8,7 +8,7 @@ export default function NotFound() {
       <div className="container text-center max-w-md">
         <h1 className="text-6xl font-bold text-foreground mb-4">404</h1>
         <p className="text-2xl font-semibold text-foreground mb-4">頁面未找到</p>
-        <p className="text-lg text-muted-foreground mb-8">
+        <p className="text-lg text-foreground/80 mb-8">
           抱歉，您要找的頁面不存在或已被移除。
         </p>
         <Link href="/">

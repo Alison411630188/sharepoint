@@ -25,7 +25,7 @@ export default function OperationTutorial() {
                 <PlayCircle className="w-8 h-8 text-primary" />
                 <h1 className="text-4xl font-bold text-foreground">SharePoint 實務操作指南</h1>
               </div>
-              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
+              <p className="text-lg text-foreground/80 max-w-3xl leading-relaxed">
                 這是一份專為企業日常辦公設計的完整操作手冊。我們將帶您從零開始，選擇正確的網站架構、熟練掌握雲端文件庫的進階管理技巧，並學習如何運用視覺化組件打造出專業的內部網站頁面。透過這些實務技巧，您將能大幅提升團隊的協作效率與數位化管理能力。
               </p>
             </MotionContainer>
@@ -39,7 +39,7 @@ export default function OperationTutorial() {
               <div className="mb-10">
                 <Badge variant="outline" className="mb-3">第一步：奠定基礎</Badge>
                 <h2 className="text-3xl font-bold mb-4">選擇最適合的網站架構</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/80 leading-relaxed">
                   建立 SharePoint 網站的第一步，就是根據您的實際需求選擇正確的範本。Microsoft 提供了小組網站與通訊網站兩種核心架構，兩者在權限預設與版面配置上皆有不同的優勢，正確的選擇能讓後續的維護工作事半功倍。
                 </p>
               </div>
@@ -50,7 +50,7 @@ export default function OperationTutorial() {
                   className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md font-medium transition-colors ${
                     activeTab === 'team'
                       ? 'bg-background shadow-sm text-foreground border-b-2 border-primary'
-                      : 'text-muted-foreground hover:text-foreground'
+                      : 'text-foreground/80 hover:text-foreground'
                   }`}
                 >
                   <Users className="w-5 h-5" />
@@ -61,7 +61,7 @@ export default function OperationTutorial() {
                   className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md font-medium transition-colors ${
                     activeTab === 'communication'
                       ? 'bg-background shadow-sm text-foreground border-b-2 border-primary'
-                      : 'text-muted-foreground hover:text-foreground'
+                      : 'text-foreground/80 hover:text-foreground'
                   }`}
                 >
                   <Globe className="w-5 h-5" />
@@ -73,14 +73,14 @@ export default function OperationTutorial() {
                 {activeTab === 'team' ? (
                   <div className="animate-in fade-in duration-300">
                     <h3 className="text-xl font-bold mb-3">打造私密的高效協作空間</h3>
-                    <p className="text-muted-foreground mb-8 leading-relaxed">
+                    <p className="text-foreground/80 mb-8 leading-relaxed">
                       小組網站是專為特定專案團隊或部門打造的專屬虛擬辦公室。它具備強大的文件庫與版本控制功能，讓團隊成員可以即時共同編輯同一份文件，徹底擺脫檔案版本混亂的困擾。同時，它的權限控管相當嚴密，只有被邀請為群組成員的使用者才能進入並查看內容，確保機密專案資料絕不外流。最重要的是，它預設與 Microsoft Teams 深度整合，讓您能在熟悉的通訊軟體中直接處理網站工作。
                     </p>
                   </div>
                 ) : (
                   <div className="animate-in fade-in duration-300">
                     <h3 className="text-xl font-bold mb-3">建立專業的企業資訊樞紐</h3>
-                    <p className="text-muted-foreground mb-8 leading-relaxed">
+                    <p className="text-foreground/80 mb-8 leading-relaxed">
                       通訊網站的主要目的是向廣泛的受眾進行單向的資訊廣播。它非常適合發佈公司最新消息、活動精采回顧或是重要政策宣導，讓全體員工都能在第一時間掌握企業動態。系統提供了豐富且美觀的網頁視覺化元件，讓您不需要撰寫任何程式碼，就能拼湊出具備專業質感的企業入口網頁面。在這裡，通常只有少數管理者擁有發佈權限，而大多數員工則以閱讀和瀏覽為主。
                     </p>
                   </div>
@@ -97,7 +97,7 @@ export default function OperationTutorial() {
               <div className="mb-10">
                 <Badge variant="outline" className="mb-3">第二步：核心應用</Badge>
                 <h2 className="text-3xl font-bold mb-4">掌握文件庫管理神技</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/80 leading-relaxed">
                   文件庫是整個 SharePoint 平台中最具價值的功能區塊。它不僅僅是一個雲端儲存空間，更是一套具備智慧化管理機制的數位檔案櫃，能大幅改變您與團隊處理日常文件的方式。
                 </p>
               </div>
@@ -109,7 +109,7 @@ export default function OperationTutorial() {
                     <CardTitle className="text-lg">本機同步體驗</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-foreground/80 leading-relaxed">
                       透過與 OneDrive 的完美結合，您可以將 SharePoint 上的雲端文件庫直接同步到電腦的本機資料夾中。這意味著您可以像平常操作本機檔案一樣，直接在檔案總管中拖曳、分類與開啟文件，而所有變更都會在背景自動且即時地同步回雲端，兼顧了操作的直覺性與雲端的便利性。
                     </p>
                   </CardContent>
@@ -120,7 +120,7 @@ export default function OperationTutorial() {
                     <CardTitle className="text-lg">自動版本歷程記錄</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-foreground/80 leading-relaxed">
                       每當您或同事儲存文件時，系統會在背景自動建立一個新的版本紀錄。無論是不小心覆蓋了重要段落，還是需要找回上週的報表數據，您都可以隨時點擊檔案的歷程記錄，輕鬆預覽並一鍵還原到過去的任何一個時間點，再也不需要手動另存一堆帶有日期的備份檔案。
                     </p>
                   </CardContent>
@@ -131,7 +131,7 @@ export default function OperationTutorial() {
                     <CardTitle className="text-lg">精準的共用與權限</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-foreground/80 leading-relaxed">
                       想要分享單一檔案給跨部門同事，卻不想讓他們看到整個資料夾？您可以針對個別檔案產生專屬的共用連結，並設定「僅供檢視」或「允許編輯」的權限，甚至能夠設定連結的有效期限與密碼保護，確保每一次的資訊傳遞都在您的絕對掌控之中。
                     </p>
                   </CardContent>
@@ -148,7 +148,7 @@ export default function OperationTutorial() {
               <div className="mb-10">
                 <Badge variant="outline" className="mb-3">第三步：優化視覺</Badge>
                 <h2 className="text-3xl font-bold mb-4">活用網頁組件豐富版面</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/80 leading-relaxed">
                   一個吸引人的網站不僅需要豐富的內容，更需要清晰的視覺動線。SharePoint 將網頁設計簡化為直觀的「網頁組件 (Web Parts)」拼圖遊戲，您只需點擊、拖曳，就能為團隊打造出美觀且高度實用的專屬頁面。
                 </p>
               </div>
@@ -157,28 +157,28 @@ export default function OperationTutorial() {
                 <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
                   <FolderOpen className="w-8 h-8 text-primary mb-4" />
                   <h4 className="font-bold mb-2">文件庫 (Document Library)</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
                     將團隊最常使用的資料夾或重要檔案直接嵌入在首頁。同仁一登入就能快速預覽並存取最新文件，不需要再層層點擊進入後台尋找。
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
                   <LinkIcon className="w-8 h-8 text-primary mb-4" />
                   <h4 className="font-bold mb-2">快速連結 (Quick Links)</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
                     將團隊日常最常使用的外部系統、打卡系統或重要規章表單，整理成帶有精美圖示的按鈕矩陣，讓入口網站真正成為同仁辦公的第一站。
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
                   <UserCircle className="w-8 h-8 text-primary mb-4" />
                   <h4 className="font-bold mb-2">人員 (People)</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
                     在首頁展示專案團隊成員或各部門聯絡窗口的個人檔案。只要輸入姓名，系統就會自動帶出他們的職稱與聯絡方式，方便跨部門溝通。
                   </p>
                 </div>
                 <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
                   <MessageSquare className="w-8 h-8 text-primary mb-4" />
                   <h4 className="font-bold mb-2">最新消息 (News)</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
                     系統會自動彙整網站內發佈的各項公告與文章，並以圖文並茂的卡片形式依序展示，確保重要佈達不會被淹沒在茫茫資訊中。
                   </p>
                 </div>

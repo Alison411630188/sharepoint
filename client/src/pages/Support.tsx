@@ -109,7 +109,7 @@ export default function Support() {
             </div>
             <h1 className="text-4xl font-bold text-foreground">技術支援</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-foreground/80 max-w-2xl">
             我們的支援團隊隨時準備幫助您。瀏覽常見問題或聯絡我們。
           </p>
         </div>
@@ -149,11 +149,11 @@ export default function Support() {
                   <CardContent className="pt-6">
                     <Icon className="w-8 h-8 text-primary mb-4" />
                     <h3 className="font-bold text-foreground mb-2">{channel.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">{channel.description}</p>
+                    <p className="text-sm text-foreground/80 mb-4">{channel.description}</p>
                     <div className="bg-secondary/50 rounded-lg p-3 mb-3">
                       <p className="text-sm font-medium text-foreground">{channel.contact}</p>
                     </div>
-                    <p className="text-xs text-muted-foreground">{channel.response}</p>
+                    <p className="text-xs text-foreground/80">{channel.response}</p>
                   </CardContent>
                 </Card>
               );
@@ -169,7 +169,7 @@ export default function Support() {
             {/* Search Box */}
             <div className="max-w-2xl mx-auto mb-12">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-foreground/80" />
                 <input
                   type="text"
                   placeholder="搜尋問題..."
@@ -193,7 +193,7 @@ export default function Support() {
                         <Card key={idx} className="border-border hover:shadow-sm transition-shadow">
                           <CardContent className="pt-6">
                             <h4 className="font-bold text-foreground mb-3">{faq.q}</h4>
-                            <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
+                            <p className="text-foreground/80 text-sm leading-relaxed">{faq.a}</p>
                           </CardContent>
                         </Card>
                       ))}
@@ -202,7 +202,7 @@ export default function Support() {
                 ))
               ) : (
                 <div className="text-center py-12">
-                  <p className="text-muted-foreground">找不到相關問題。請嘗試其他搜尋詞。</p>
+                  <p className="text-foreground/80">找不到相關問題。請嘗試其他搜尋詞。</p>
                 </div>
               )}
             </div>
@@ -244,7 +244,7 @@ export default function Support() {
                     <CardContent className="pt-6">
                       <Icon className="w-8 h-8 text-primary mb-4" />
                       <h3 className="font-bold text-foreground mb-2">{resource.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4">{resource.description}</p>
+                      <p className="text-sm text-foreground/80 mb-4">{resource.description}</p>
                       <div className="text-primary text-sm font-medium flex items-center">
                         前往 <ArrowRight className="ml-2 w-4 h-4" />
                       </div>
@@ -263,7 +263,7 @@ export default function Support() {
           <h2 className="text-2xl font-bold text-foreground mb-4">
             仍然需要幫助？
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-foreground/80 mb-8 max-w-2xl mx-auto">
             我們的支援團隊隨時準備幫助您解決任何問題。
           </p>
           <Button>

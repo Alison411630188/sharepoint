@@ -111,7 +111,7 @@ export default function ScenarioGallery() {
             </div>
             <h1 className="text-4xl font-bold text-foreground">案例庫</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-foreground/80 max-w-2xl">
             真實的 SharePoint 協作案例，使用者分享他們的成功故事。探索各種不同的使用情景。
           </p>
         </div>
@@ -131,7 +131,7 @@ export default function ScenarioGallery() {
                       {cat.name}
                     </div>
                     <div className="text-2xl font-bold text-foreground">{cat.count}</div>
-                    <p className="text-sm text-muted-foreground">個案例</p>
+                    <p className="text-sm text-foreground/80">個案例</p>
                   </CardContent>
                 </Card>
               ))}
@@ -166,7 +166,7 @@ export default function ScenarioGallery() {
                           {scenario.category}
                         </Badge>
 
-                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                        <p className="text-foreground/80 mb-4 leading-relaxed">
                           {scenario.description}
                         </p>
 
@@ -197,7 +197,7 @@ export default function ScenarioGallery() {
 
           {/* Load More */}
           <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">
+            <p className="text-foreground/80 mb-6">
               還有更多案例正在準備中...
             </p>
             <Button variant="outline">
@@ -239,7 +239,7 @@ export default function ScenarioGallery() {
                   <div className="text-2xl font-bold text-primary mb-3">
                     {story.result}
                   </div>
-                  <p className="text-muted-foreground">{story.description}</p>
+                  <p className="text-foreground/80">{story.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -253,7 +253,7 @@ export default function ScenarioGallery() {
           <h2 className="text-3xl font-bold text-foreground text-center mb-12">
             查看我們的學習資源
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-foreground/80 mb-8 max-w-2xl mx-auto">
             查看我們的知識庫，學習如何建立適合您業務需求的 SharePoint 協作系統。
           </p>
           <Link href="/knowledge-base">

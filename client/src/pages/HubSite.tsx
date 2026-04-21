@@ -77,7 +77,7 @@ export default function HubSite() {
               <h1 className="text-4xl font-bold text-foreground mb-4">
                 關聯至中樞網站
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl">
                 將您的獨立小組網站或通訊網站連接至部門的中樞網站，藉此共用企業導覽列、佈景主題外觀，並集中管理最新消息與搜尋結果。
               </p>
             </MotionContainer>
@@ -109,7 +109,7 @@ export default function HubSite() {
                   {/* 實戰小提示 */}
                   <div className="bg-secondary/50 rounded-xl p-6 border border-border/50 flex gap-4 items-start shadow-sm mb-16">
                     <Lightbulb className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-foreground/80 leading-relaxed">
                       <strong className="text-foreground font-bold">💡 實戰小提示：</strong> 
                       如果您在步驟 3 的下拉選單中找不到任何選項，代表貴公司可能尚未建立中樞網站，或是系統管理員尚未將您加入允許關聯的權限名單中。
                     </p>
@@ -129,7 +129,7 @@ export default function HubSite() {
                             <h4 className="font-bold text-xl text-foreground mb-3 mt-2">
                               {step.title}
                             </h4>
-                            <div className="text-muted-foreground text-[15px] leading-relaxed">
+                            <div className="text-foreground/80 text-[15px] leading-relaxed">
                               {step.description}
                             </div>
                           </div>

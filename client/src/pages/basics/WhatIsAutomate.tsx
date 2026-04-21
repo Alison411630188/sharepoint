@@ -38,7 +38,7 @@ export default function WhatIsSharePoint() {
           <div className="container">
             <MotionContainer direction="up">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">SharePoint 是什麼？</h1>
-              <p className="text-xl text-muted-foreground max-w-2xl">
+              <p className="text-xl text-foreground/80 max-w-2xl">
                 Microsoft SharePoint 是一個強大的雲端協作與資訊管理平台，幫助企業建立內部網站、集中管理文件，並讓團隊無縫溝通與共享資源。
               </p>
               <div className="mt-8">
@@ -64,14 +64,14 @@ export default function WhatIsSharePoint() {
                 <h2 className="text-3xl font-bold text-foreground mb-8">核心概念</h2>
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   <div>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                    <p className="text-foreground/80 mb-6 leading-relaxed">
                       想像您的團隊每天都在透過 Email 傳遞檔案，導致版本混亂，或是新進員工總是找不到過往的專案資料。這些「資訊孤島」會大幅降低工作效率。SharePoint 就是為了解決這個問題而設計的——它提供一個單一、安全的雲端中心，讓企業的檔案、知識和溝通都能有條理地集中管理。
                     </p>
                     <div className="bg-primary/5 border-l-4 border-primary p-6 rounded">
                       <p className="text-foreground font-semibold">
                         SharePoint = 團隊協作 + 企業入口網 + 文件庫 + 權限安全
                       </p>
-                      <p className="text-muted-foreground mt-2 text-sm">
+                      <p className="text-foreground/80 mt-2 text-sm">
                         一個平台，幫助您的組織打破資訊穀倉、安全地管理數位資產，並打造專屬的數位辦公室。
                       </p>
                     </div>
@@ -107,7 +107,7 @@ export default function WhatIsSharePoint() {
                           </div>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground">{feature.desc}</p>
+                          <p className="text-foreground/80">{feature.desc}</p>
                         </CardContent>
                       </Card>
                     </HoverScale>
@@ -131,7 +131,7 @@ export default function WhatIsSharePoint() {
                   <MotionContainer key={idx} direction="up" delay={idx * 0.05}>
                     <div className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-colors shadow-sm h-full">
                       <p className="font-bold text-primary mb-2">{concept.title}</p>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{concept.desc}</p>
+                      <p className="text-foreground/80 text-sm leading-relaxed">{concept.desc}</p>
                     </div>
                   </MotionContainer>
                 ))}
@@ -145,10 +145,10 @@ export default function WhatIsSharePoint() {
                   <Lightbulb className="w-8 h-8 text-primary flex-shrink-0" />
                   <div>
                     <p className="font-bold text-lg text-foreground mb-2">💡 新手建站提示</p>
-                    <p className="text-muted-foreground mb-3">
+                    <p className="text-foreground/80 mb-3">
                       SharePoint 的核心在於「權限與架構」。最好的學習方式是：先釐清您的需求是內部團隊協作還是全公司佈達 → 選擇建立小組或通訊網站 → 規劃好簡單的資料夾階層並設定權限 → 最後再開始上傳檔案並設計頁面外觀。
                     </p>
-                    <p className="text-muted-foreground/80 text-sm">
+                    <p className="text-foreground/80/80 text-sm">
                       只要您的企業擁有 Microsoft 365 商業版授權，通常就已經包含了完整的 SharePoint 基礎功能，隨時可以開始建立您的專屬雲端辦公室。
                     </p>
                   </div>

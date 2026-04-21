@@ -127,7 +127,7 @@ export default function DocumentCenter() {
             </div>
             <h1 className="text-4xl font-bold text-foreground">文件中心</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-foreground/80 max-w-2xl">
             下載教材、範本和最佳實踊文件，加速您的 SharePoint 學習進程。
           </p>
         </div>
@@ -168,12 +168,12 @@ export default function DocumentCenter() {
                   </div>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-muted-foreground mb-6 flex-1">
+                  <p className="text-foreground/80 mb-6 flex-1">
                     {doc.description}
                   </p>
 
                   {/* Document Info */}
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4 pb-4 border-t border-border pt-4">
+                  <div className="flex items-center justify-between text-sm text-foreground/80 mb-4 pb-4 border-t border-border pt-4">
                     <div className="flex gap-4">
                       <span className="flex items-center gap-1">
                         <FileText className="w-4 h-4" />
@@ -229,7 +229,7 @@ export default function DocumentCenter() {
                   <CardContent className="pt-6">
                     <Icon className="w-8 h-8 text-primary mb-4" />
                     <h3 className="font-bold text-foreground mb-2">{resource.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">{resource.description}</p>
+                    <p className="text-sm text-foreground/80 mb-4">{resource.description}</p>
                     <a href={resource.link} className="text-primary text-sm font-medium hover:underline">
                       瞭解更多 →
                     </a>
@@ -269,7 +269,7 @@ export default function DocumentCenter() {
               <Card key={idx} className="border-border">
                 <CardContent className="pt-6">
                   <h3 className="font-bold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground text-sm">{faq.a}</p>
+                  <p className="text-foreground/80 text-sm">{faq.a}</p>
                 </CardContent>
               </Card>
             ))}

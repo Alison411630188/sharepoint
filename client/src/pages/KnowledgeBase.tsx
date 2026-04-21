@@ -94,7 +94,7 @@ export default function KnowledgeBase() {
             </div>
             <h1 className="text-4xl font-bold text-foreground">知識庫</h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-foreground/80 max-w-2xl">
             系統化的 SharePoint 學習路徑，從認識基礎網站架構到進階企業應用。請根據您的實務需求選擇合適的課程。
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function KnowledgeBase() {
           {/* Filter/Info Bar */}
           <div className="mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <p className="text-muted-foreground">
+              <p className="text-foreground/80">
                 共 <span className="font-bold text-foreground">{modules.length}</span> 個學習模組
               </p>
             </div>
@@ -134,7 +134,7 @@ export default function KnowledgeBase() {
                           </div>
                           <div className="flex-1">
                             <h3 className="text-lg font-bold text-foreground mb-2">{module.title}</h3>
-                            <p className="text-muted-foreground mb-4">{module.description}</p>
+                            <p className="text-foreground/80 mb-4">{module.description}</p>
                             
                             {/* Topics */}
                             <div className="flex flex-wrap gap-2 mb-4">
@@ -146,7 +146,7 @@ export default function KnowledgeBase() {
                             </div>
 
                             {/* Meta Info */}
-                            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                            <div className="flex flex-wrap gap-4 text-sm text-foreground/80">
                               <div className="flex items-center gap-1">
                                 <Clock className="w-4 h-4" />
                                 {module.duration}
@@ -208,7 +208,7 @@ export default function KnowledgeBase() {
                     <CardTitle className="text-lg">{path.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">{path.description}</p>
+                    <p className="text-sm text-foreground/80 mb-4">{path.description}</p>
                     <div className="space-y-2 mb-6">
                       {path.modules.map((mod) => (
                         <div key={mod} className="flex items-center gap-2 text-sm">
@@ -217,7 +217,7 @@ export default function KnowledgeBase() {
                         </div>
                       ))}
                     </div>
-                    <div className="text-xs text-muted-foreground mb-4">
+                    <div className="text-xs text-foreground/80 mb-4">
                       預計時長：{path.duration}
                     </div>
                     <Button variant="outline" className="w-full">
@@ -237,7 +237,7 @@ export default function KnowledgeBase() {
           <h2 className="text-2xl font-bold text-foreground mb-4">
             需要額外幫助？
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-foreground/80 mb-8 max-w-2xl mx-auto">
             瀏覽我們的常見問題或聯絡 SharePoint 系統管理團隊。
           </p>
           <Link href="/support">
